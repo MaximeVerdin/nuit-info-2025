@@ -1,0 +1,6 @@
+- [ ] Update PDO.php to use MySQL instead of PostgreSQL
+- [ ] Update model.php to match the new database structure (Utilisateurs, Questions, Reponses)
+- [ ] Add user management methods (register, login) in model.php
+- [ ] Add response saving methods in model.php
+- [ ] Update controller.php to handle user authentication and response submission
+- [ ] Ensure fallback to array if database is not available
