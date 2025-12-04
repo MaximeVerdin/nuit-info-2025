@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR" xml:lang="fr-FR" dir="ltr">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="icon" type="image/x-icon" href="https://nird.forge.apps.education.fr/favicon.ico">
+    <title>Le choix Linux</title>
+    <!-- Ajout des mêmes liens CSS et polices que index.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSSRETRO.css">
+    <link rel="stylesheet" href="gamingcss.css">
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list[class]{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="index.html">
+                <img src="https://nird.forge.apps.education.fr/img/logo+text206px.png" alt="Logo NIRD">	
+            </a>
+            <span>La démarche NIRD</span>
+        </h1>
+        <h2>Le choix Linux</h2>
+    </header>
+    
+    <!-- Mise à jour de la structure de navigation pour correspondre à index.html -->
+    <div class="nav-wrap">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Ouvrir le menu" aria-controls="site-nav" aria-expanded="false">
+            <span class="menu-icon">☰</span>
+        </label>
+        <nav class="navbar nav-menu loaded" id="site-nav">
+            <p>
+                <a href="index.html">🐝 Accueil</a>
+                <a href="demarche.html">🚸 Démarche</a>
+                <a href="pilotes.html">🏫 Pilotes</a>
+                <a href="linux.html">🐧 Linux</a>
+                <a href="tools.html">🧰 Boite à outils</a>
+                <a href="reconditionnement.html">♻️ Reconditionnement</a>
+                <a href="collectivites.html">🏛️ Collectivités</a>
+                <a href="pourquoi.html">❓ Pourquoi</a>
+                <a href="QCM.html">📝 QCM</a>
+            </p>
+        </nav>
+    </div>
+
+    <main>
+        <p>Vous trouverez sur cette page une proposition de deux distributions Linux, <strong>PrimTux</strong> pour le primaire et <strong>Linux NIRD</strong> pour secondaire, ainsi qu'un argumentaire justifiant ce choix.</p>
+
+        <blockquote>
+            <p>⚠️ La distribution Linux que nous vous proposons ci-dessous peut également <strong>aider les lycées des Hauts-de-France</strong> à traverser <a href="https://www.hautsdefrance.fr/incident-de-cybersecurite-dans-plusieurs-lycees-de-la-region-hauts-de-france/">la crise actuelle</a> : on peut l'utiliser hors connexion, elle peut se lancer depuis une clé USB (sans toucher au système en place), on peut l'installer sur du matériel ancien par reconditionnement et elle contient l'essentiel des logiciels pour le second degré (spécialité NSI comprise).</p>
+        </blockquote>
+
+        <h2>Notre distribution « Linux NIRD » pour le secondaire</h2>
+        
+        <figure>
+            <img src="https://nird.forge.apps.education.fr/img/distribution-linux-nird-version01.png" alt="Copie d'écran du bureau de la distribution Linux NIRD.">
+            <figcaption>Copie d'écran du bureau de la distribution Linux NIRD.</figcaption>
+        </figure>
+
+        <p>Fruit de l'expérience et de l'expertise des enseignants du lycée Carnot, la démarche vous propose <strong>une distribution GNU/Linux adaptée au secondaire</strong> dont vous trouverez l'image à télécharger ci-dessous (on dit aussi master ou iso). C'est une toute première version 0.1, nous la ferons évoluer ensemble au fil du temps. En voici une courte <strong><a href="https://tube-numerique-educatif.apps.education.fr/w/o38jV2DpXyy3zVM8GDYh9M">présentation vidéo</a></strong> (2 min).</p>
+
+        <p>Attention ! Cette distribution peut rendre bien des services (cf ci-dessous) mais <strong>elle n'est pas configurée pour s'intégrer directement en l'état dans le réseau mis en place par votre collectivité</strong> (contactez directement votre collectivité pour envisager cela ensemble).</p>
+
+        <p>Avantages de cette distribution :</p>
+        <ul>
+            <li>Elle est <strong>créée, testée et maintenue par des enseignants</strong> et acteurs de l'éducation.</li>
+            <li>Elle possède <a href="https://edurl.fr/tchap-distribution-linux-nird">un forum Tchap dédié</a> pour <strong>accueillir et accompagner les utilisateurs</strong>, notamment les débutants</li>
+            <li>Elle est <strong>légère</strong> (Linux Mint + Xfce + dock Plank). Ainsi elle pour tourner sur des machines même anciennes.</li>
+            <li>Elle s'installe par <strong>reconditionnement</strong> sur des PC trop lents ou <em>dormants dans les placards</em> des établissements scolaires (pour par exemple en faire démonstration en salle des professeurs). Ce reconditionnement pouvant se faire par les élèves eux-mêmes au sein d'un club-informatique.</li>
+            <li>Elle fonctionne <strong>sans avoir besoin de connexion</strong> Internet (si absence temporaire ou permanente de connexion, si situation de crise comme récemment dans les Hauts-de-France).</li>
+            <li>Elle dispose d'une <strong>suite complète de logiciels libres optimisée pour un usage scolaire</strong> en collège et en lycée (dont la spécialité NSI).</li>
+            <li>Elle est <strong>bootable sur clé USB</strong> (sans rien toucher au système).</li>
+            <li>Elle offre une distribution <em>clé en main</em> aux enseignantes et enseignants qui souhaiteraient <strong>migrer leur PC perso de Windows vers Linux</strong>.</li>
+            <li>Elle peut être <strong>utile aux collectivités</strong> qui souhaiteraient demain intégrer Linux dans le parc de leurs établissements scolaires. Par ses choix techniques, sa sélection de logiciels natifs, ses ressources éducatives libres, sa communauté sur Tchap assurant un support de premier niveau, elle peut servir de base ou de modèle à une distribution adaptée au réseau de la collectivité.</li>
+        </ul>
+
+        <p>Le fond d'écran est l'œuvre de l'illustratrice <a href="https://juliettetaka.com/">Juliette Taka</a> avec ajout du logo de la démarche NIRD (cf image ci-dessus).</p>
+
+        <h3>Image à télécharger et graver sur clé USB</h3>
+
+        <h4>Version avec installeur</h4>
+        <p>Si vous voulez installer la distribution sur votre machine :</p>
+        <ul>
+            <li>Image de la distribution Linux NIRD à télécharger : <a href="https://maths-code.fr/iso/NIRD-2025.iso">lien direct</a>.</li>
+            <li><a href="https://maths-code.fr/iso/NIRD-2025.md5">Clé md5</a> pour vérification de l'image téléchargée.</li>
+        </ul>
+
+        <h4>Version clef USB, sans installeur, et compte eleve sans droits</h4>
+        <p>Avec cette version, il faut se connecter à un compte <code>eleve/eleve</code>. Le compte <code>eleve</code> a toutefois accès à l'installation de logiciels sur la clef, le temps de la session. Ce compte autorise le formatage ou la gravure des clés USB.</p>
+        <ul>
+            <li>Image de la distribution Linux NIRD <em>version clef USB</em> à télécharger : <a href="https://maths-code.fr/iso/NIRD-2025_USB_eleve.iso">lien direct</a>.</li>
+            <li><a href="https://maths-code.fr/iso/NIRD-2025_USB_eleve.md5">Clé md5</a> pour vérification de l'image téléchargée.</li>
+        </ul>
+
+        <h4>Graver l'image</h4>
+        <p>Il convient ensuite de graver l'image sur une clé USB. (attention, vous perdez les données présentes sur cette clé). Ce n'est pas une simple copie, un PC peut démarrer sur l'image ainsi gravée.</p>
+        <ul>
+            <li><p>Utiliser l'outil <a href="https://www.ventoy.net/en/index.html">Ventoy</a> permet d'utiliser la clé comme stockage. Idéal si vous utilisez le système sur clé.</p></li>
+            <li><p><a href="https://etcher.balena.io/">Balena Etcher</a>, Rufus ou tout autre logiciel de gravure d'image conviennent mais la clé sera exclusivement réservée à cet usage.</p></li>
+        </ul>
+
+        <p><em>Trop compliqué ? Venez demander des conseils sur <a href="https://edurl.fr/tchap-distribution-linux-nird">notre forum Tchap</a> !</em></p>
+
+        <h2>La distribution PrimTux pour le primaire</h2>
+
+        <figure>
+            <img src="https://nird.forge.apps.education.fr/img/primtux-bureau-v8.png" alt="Copie d'écran du bureau (professeur) de la distribution PrimTux.">
+            <figcaption>Copie d'écran du bureau (professeur) de la distribution PrimTux.</figcaption>
+        </figure>
+
+        <p><em>Linux dans les écoles primaires, c'est PrimTux !</em></p>
+
+        <p>Dans le cadre de la démarche NIRD, l'installation de <strong>PrimTux</strong> dans les écoles primaires permet d'équiper durablement les classes tout en réduisant les coûts. PrimTux, <strong>distribution libre conçue par et pour des enseignants</strong>, intègre de très nombreuses ressources numériques pédagogiques, fonctionne sur du matériel neuf ou <strong>reconditionné</strong> et s'adapte à tous les usages de l'école : un même ordinateur sous PrimTux propose plusieurs profils élèves adaptés à chaque niveau (cycles 1, 2, 3) et un profil enseignant, utilisable aussi bien en fond de classe ou en salle informatique qu'en poste maître.</p>
+
+        <p>Les collectivités peuvent s'appuyer sur une <strong>communauté active</strong> :</p>
+        <ul>
+            <li>l'<strong><a href="https://primtux.fr/">association PrimTux</a></strong> assure le développement de la distribution Linux, documente le site et anime la communauté,</li>
+            <li>des <strong>webinaires</strong> de démonstration et formation peuvent également etre organisés à la demande en fonction des disponibilités de l'association,</li>
+            <li>un <strong><a href="https://edurl.fr/tchap-primtux">forum d'entraide</a></strong> sur Tchap assure un <strong>support pédagogique et technique de premier niveau</strong> à distance entre enseignantes et enseignants utilisateurs de PrimTux,</li>
+            <li>et les <strong>collèges et lycées voisins</strong> impliqués dans la Démarche NIRD peuvent contribuer au reconditionnement des ordinateurs, réalisé par les élèves eux-mêmes dans le cadre de projets pédagogiques.</li>
+        </ul>
+
+        <p>Projet pépite de la <a href="https://docs.forge.apps.education.fr/">forge des communs numériques éducatifs</a>, PrimTux est <strong>soutenu par la Direction du numérique pour l'éducation (DNE)</strong> dans le cadre de sa stratégie du numérique pour l'éducation 2023-2027 qui encourage l'usage et le développement des logiciels libres et des communs numériques par ou pour la communauté scolaire.</p>
+
+        <p>Comme les villes de Lyon, de <a href="https://www.blois.fr/info/2025/11/numeriquelibre-primtux">Blois</a> ou de <a href="https://www.lobservateur.fr/nord-primtux-systeme-exploitation-pour-enfants/">Caudry</a> (cf image ci-dessous), nous invitons les communes de toutes tailles à installer et utiliser PrimTux dans leurs écoles primaires et y rejoindre ainsi <a href="pilotes.html">les établissements pilotes</a> de la démarche NIRD.</p>
+
+        <ul>
+            <li><strong><a href="https://primtux.fr/">Le site officiel de PrimTux</a></strong></li>
+            <li><a href="https://primtux.fr/ptx8.mp4">Clip de présentation de PrimTux (vidéo, 2 min)</a></li>
+            <li><a href="https://primtux.fr/Presentation.mp4">Formation découverte de PrimTux, par Stéphane Deudon (vidéo, 20 min)</a></li>
+            <li><a href="https://primtux.fr/Primtux-affiche-A3.pdf">Affiche "Que faire avec PrimTux ?" (PDF)</a></li>
+            <li><strong><a href="https://distrosea.com/fr/start/primtux-8-xfce/">Tester PrimTux 8 en ligne (sur Distrosea)</a></strong> C'est bien plus lent que sur votre propre ordinateur mais cela permet tout de suite de se faire une idée avant d'envisager l'installation.</li>
+        </ul>
+
+        <h2>Pourquoi le choix Linux</h2>
+
+        <p>La <strong>démarche NIRD</strong> vise à promouvoir un numérique inclusif, responsable et durable dans les établissements scolaires. Le choix d'équiper progressivement les ordinateurs du parc, neufs ou <a href="reconditionnement.html">reconditionnés</a>, avec le système d'exploitation libre <strong>Linux</strong> (en lieu et place de système d'exploitation propriétaire comme Windows) n'est pas seulement une alternative technique. C'est un <strong>choix structurant et transformant</strong> qui soutient pleinement les trois dimensions de la démarche.</p>
+
+        <p>Chaque machine sous Linux devient alors un <strong>outil pédagogique, éthique et écologique</strong> aligné avec les objectifs conjoints de l'Éducation nationale de sensibiliser au <strong>développement durable</strong> et de soutenir les <strong>communs numériques</strong>.</p>
+
+        <h3>1. Un choix inclusif : un outil pédagogique accessible à tous</h3>
+
+        <p>Opter pour Linux permet de mettre à disposition des enseignants et des élèves un environnement numérique pensé pour l'apprentissage.</p>
+        <ul>
+            <li><strong>Accessibilité universelle</strong> : Linux est libre et peut être installé sans licence payante. Cela permet d'équiper davantage d'élèves et de réduire les inégalités d'accès au numérique, que ce soit à l'école ou à la maison.</li>
+            <li><strong>Des interfaces adaptées</strong> : Des distributions Linux, comme PrimTux à l'école primaire, proposent des interfaces qui facilitent la différenciation pédagogique et permettent de respecter le rythme et le niveau de chaque élève.</li>
+            <li><strong>Un large choix de ressources éducatives libres</strong> : lecture, mathématiques, sciences, programmation, bureautique… les enseignants trouvent des outils variés (comme ceux de la forge des communs numériques éducatifs) pour enrichir leurs cours, sans coûts additionnels.</li>
+            <li><strong>Un fonctionnement simple et stable</strong> : même sur du matériel ancien, Linux démarre rapidement et reste fluide et fiable, réduisant les temps de panne et favorisant un usage serein en classe.</li>
+            <li><strong>Un support pour la pédagogie active</strong> : les élèves ne se contentent pas d'utiliser les logiciels, ils peuvent aussi découvrir le fonctionnement d'un système libre, comprendre les bases de l'informatique, et développer une culture et un esprit critique du numérique.</li>
+            <li><strong>Un levier d'inclusion</strong> : grâce aux outils disponibles (synthèse vocale, logiciels d'aide à la lecture ou à l'écriture), il est possible de mieux accompagner les élèves à besoins spécifiques.</li>
+        </ul>
+
+        <p>Avec Linux, les enseignants disposent d'une boîte à outils pédagogique fiable, gratuite et adaptée à leurs pratiques, et les élèves bénéficient d'un accès équitable et stimulant au numérique, quelles que soient leurs conditions matérielles ou sociales</p>
+
+        <h3>2. Un choix responsable : maîtrise, éthique et souveraineté numérique</h3>
+
+        <p>Au-delà de l'aspect technique, Linux offre un cadre numérique plus sûr et plus transparent pour l'école.</p>
+        <ul>
+            <li><strong>Respect des données personnelles</strong> : contrairement à certains systèmes propriétaires, Linux ne collecte pas d'informations à des fins commerciales. Les enseignants et les élèves évoluent dans un environnement protégé, en cohérence avec le RGPD.</li>
+            <li><strong>Maîtrise pédagogique</strong> : les enseignants peuvent adapter et personnaliser leur environnement numérique (installation de logiciels spécifiques, paramétrage de l'espace de travail) sans dépendre d'un fournisseur externe.</li>
+            <li><strong>Formation citoyenne</strong> : l'usage de logiciels libres familiarise les élèves avec une culture du partage et de la coopération, développant leur esprit critique face aux outils numériques.</li>
+            <li><strong>Souveraineté éducative</strong> : l'établissement garde le contrôle de ses choix technologiques et ne dépend pas de modèles économiques liés à des abonnements ou licences fermées.</li>
+        </ul>
+
+        <p>Linux met l'école en cohérence avec sa mission : former des <strong>citoyens éclairés et autonomes</strong> dans un monde numérique.</p>
+
+        <h3>3. Un choix durable : prolonger la vie des équipements et réduire l'empreinte écologique</h3>
+
+        <p>Linux est aussi un outil puissant pour répondre aux enjeux environnementaux et financiers des établissements.</p>
+        <ul>
+            <li><strong>Optimisation du matériel existant</strong> : même des ordinateurs de plus de dix ans retrouvent une seconde vie grâce à Linux, ce qui évite des dépenses importantes pour les établissements et les collectivités.</li>
+            <li><strong>Réduction des déchets électroniques</strong> : chaque machine reconditionnée représente autant de matériel qui n'est pas jeté et racheté, contribuant à limiter l'impact écologique des équipements numériques.</li>
+            <li><strong>Pérennité</strong> : les distributions Linux ont des cycles de support longs et une communauté active garantissant une utilisation fiable sur plusieurs années sans changement de matériel imposé.</li>
+            <li><strong>Éducation à la sobriété numérique</strong> : en montrant aux élèves qu'un ordinateur ancien peut rester performant avec un système adapté, on transmet des valeurs de consommation responsable.</li>
+        </ul>
+
+        <p>Avec Linux, l'établissement choisit une solution <strong>économique, écologique et éducative</strong>, en accord avec les objectifs de développement durable et la responsabilité environnementale.</p>
+
+        <figure>
+            <img src="https://nird.forge.apps.education.fr/img/plusieurs-primtux.png" alt="Reconditionnement simultané de plusieurs ordinateurs pour équiper une école en PrimTux.">
+            <figcaption>Reconditionnement simultané de plusieurs ordinateurs pour équiper une école en PrimTux.</figcaption>
+        </figure>
+    </main>
+
+    <!-- Mise à jour du footer pour correspondre à index.html -->
+    <footer>
+        <nav>
+            <ul class="social-links">
+                <li><a class="tchap" href="https://edurl.fr/tchap-demarche-nird">Salon Tchap</a></li>
+                <li><a class="mastodon" href="https://mastodon.mim-libre.fr/@demarchenird">Compte Mastodon</a></li>
+                <li><a class="gitlab" href="https://forge.apps.education.fr/nird">GitLab</a></li>
+                <li><a class="tux" href="linux.html">Distributions</a></li>
+            </ul>
+        </nav>
+
+        <p>Ce site est à l'initiative d'un collectif enseignant réuni sur le <b><a href="https://edurl.fr/tchap-laforgeedu-nird">forum Tchap de la Démarche NIRD</a></b> que nous vous invitons à rejoindre si vous êtes intéressé par la démarche.<br>
+        Il est hébergé sur la <a href="https://docs.forge.apps.education.fr/">Forge des communs numériques éducatifs</a>, son squelette est sous licence libre MIT et son contenu sous licence libre Creative Commons BY.</p>
+        
+        <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs" src="https://nird.forge.apps.education.fr/logo-forge-titre-large.png">
+    </footer>
+</body>
+</html>

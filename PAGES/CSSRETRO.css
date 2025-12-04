@@ -1,0 +1,466 @@
+/* ===== RETRO GAMING STYLE - ANNÉES 80-90 ===== */
+
+/* Variables de couleurs arcade */
+:root {
+  --neon-cyan: #00ffff;
+  --neon-magenta: #ff00ff;
+  --neon-yellow: #ffff00;
+  --neon-green: #00ff00;
+  --arcade-purple: #8b00ff;
+  --dark-bg: #0a0a1f;
+  --darker-bg: #050510;
+  --light-text: #e0e0ff;
+  --border-color: #00ffff;
+}
+
+/* Reset et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "VT323", monospace;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--light-text);
+  background-color: var(--dark-bg);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 255, 0.03) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 255, 255, 0.03) 3px
+  );
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Effet scanlines CRT */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Header style arcade */
+header {
+  background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 4px solid var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), inset 0 0 30px rgba(0, 255, 255, 0.1);
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--neon-cyan) 0%, var(--neon-magenta) 50%, var(--neon-yellow) 100%);
+  animation: rainbow-border 3s linear infinite;
+}
+
+@keyframes rainbow-border {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+header h1 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan), 2px 2px 0
+    var(--neon-magenta);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan), 2px 2px 0
+      var(--neon-magenta);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan), 0 0 60px var(--neon-cyan), 2px 2px 0
+      var(--neon-magenta);
+  }
+}
+
+header h1 a {
+  display: block;
+}
+
+header h1 img {
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--neon-cyan));
+  transition: filter 0.3s ease;
+}
+
+header h1 img:hover {
+  filter: drop-shadow(0 0 20px var(--neon-magenta));
+}
+
+header h1 span {
+  font-size: 1rem;
+}
+
+header h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2rem;
+  color: var(--neon-yellow);
+  text-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow), 2px 2px 0 var(--arcade-purple);
+}
+
+/* Navigation retro */
+.nav-wrap {
+  background-color: var(--darker-bg);
+  border-bottom: 2px solid var(--neon-magenta);
+  box-shadow: 0 4px 15px rgba(255, 0, 255, 0.3);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.navbar {
+  padding: 1rem;
+}
+
+.navbar p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.navbar a {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  color: var(--neon-green);
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border: 3px solid var(--neon-green);
+  background-color: rgba(0, 255, 0, 0.1);
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px var(--neon-green);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  position: relative;
+}
+
+.navbar a::before {
+  content: "▸";
+  position: absolute;
+  left: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: var(--neon-green);
+  color: var(--dark-bg);
+  text-shadow: none;
+  box-shadow: 0 0 20px var(--neon-green), inset 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.navbar a:hover::before {
+  opacity: 1;
+}
+
+.navbar a:active {
+  transform: translateY(0);
+}
+
+/* Contenu principal */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: rgba(10, 10, 31, 0.8);
+  border-left: 2px solid var(--neon-cyan);
+  border-right: 2px solid var(--neon-magenta);
+}
+
+main p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  color: var(--light-text);
+}
+
+strong {
+  color: var(--neon-yellow);
+  text-shadow: 0 0 5px var(--neon-yellow);
+  font-weight: bold;
+}
+
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  text-shadow: 0 0 5px var(--neon-cyan);
+  transition: all 0.3s ease;
+  border-bottom: 1px dotted var(--neon-cyan);
+}
+
+a:hover {
+  color: var(--neon-magenta);
+  text-shadow: 0 0 10px var(--neon-magenta);
+  border-bottom-color: var(--neon-magenta);
+}
+
+/* Listes style pixel */
+ul {
+  list-style: none;
+  margin: 1.5rem 0 1.5rem 2rem;
+}
+
+ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  color: var(--light-text);
+}
+
+ul li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  color: var(--neon-magenta);
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px var(--neon-magenta);
+}
+
+/* Figure et image */
+figure {
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 4px solid var(--neon-cyan);
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid var(--neon-magenta);
+  filter: contrast(1.1) saturate(1.2);
+}
+
+figcaption {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  color: var(--neon-yellow);
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 0, 0.1);
+  border-top: 2px solid var(--neon-yellow);
+  text-shadow: 0 0 5px var(--neon-yellow);
+}
+
+/* Footer arcade */
+footer {
+  background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 4px solid var(--neon-magenta);
+  box-shadow: 0 -4px 20px rgba(255, 0, 255, 0.5);
+  margin-top: 3rem;
+  color: var(--light-text);
+}
+
+footer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--neon-yellow) 0%, var(--neon-cyan) 50%, var(--neon-magenta) 100%);
+  margin-bottom: 2rem;
+  animation: rainbow-border 3s linear infinite reverse;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.social-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li::before {
+  display: none;
+}
+
+.social-links a {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  padding: 1rem 1.5rem;
+  border: 3px solid var(--neon-cyan);
+  background-color: rgba(0, 255, 255, 0.1);
+  display: inline-block;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 5px var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  border-bottom: none;
+}
+
+.social-links a:hover {
+  background-color: var(--neon-cyan);
+  color: var(--dark-bg);
+  text-shadow: none;
+  box-shadow: 0 0 30px var(--neon-cyan), inset 0 0 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+footer p {
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+footer b {
+  color: var(--neon-yellow);
+}
+
+.forge_footer {
+  max-width: 300px;
+  height: auto;
+  margin-top: 2rem;
+  filter: drop-shadow(0 0 10px var(--neon-cyan));
+  opacity: 0.8;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: block;
+  }
+
+  .navbar {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .nav-toggle:checked ~ .navbar {
+    max-height: 1000px;
+  }
+
+  .navbar p {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  header h1 span {
+    font-size: 0.8rem;
+  }
+
+  header h2 {
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 1rem;
+    border-left: none;
+    border-right: none;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-links a {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Animations de pixels */
+@keyframes pixel-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Effet de coins arrondis pixelisés */
+header,
+.navbar a,
+footer,
+figure,
+.social-links a {
+  clip-path: polygon(
+    0 4px,
+    4px 4px,
+    4px 0,
+    calc(100% - 4px) 0,
+    calc(100% - 4px) 4px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 4px),
+    0 calc(100% - 4px)
+  );
+}
