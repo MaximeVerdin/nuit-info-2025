@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadQuestions() {
-    fetch('php/QCM.php')
+    fetch('../php/QCM.php')
         .then(response => response.json())
         .then(data => {
             displayForm(data);
@@ -34,7 +34,7 @@ function displayForm(questions) {
 }
 
 function submitAnswers(formData) {
-    fetch('php/QCM.php', {
+    fetch('../php/QCM.php', {
         method: 'POST',
         body: formData
     })

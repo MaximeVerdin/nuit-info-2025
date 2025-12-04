@@ -1,0 +1,2 @@
+- [x] Modify QCM.php to return JSON instead of HTML
+- [x] Update QCM.js to change fetch URLs to '../php/QCM.php'
