@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadQuestions() {
-  fetch("../php/QCM.php")
-    .then((response) => response.json())
-    .then((data) => {
-      displayForm(data);
-    })
-    .catch((error) => console.error("Error loading questions:", error));
+    fetch('../php/QCM.php')
+        .then(response => response.json())
+        .then(data => {
+            displayForm(data);
+        })
+        .catch(error => console.error('Error loading questions:', error));
 }
 
 function displayForm(questions) {
@@ -34,13 +34,13 @@ function displayForm(questions) {
 }
 
 function submitAnswers(formData) {
-  fetch("../php/QCM.php", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      displayResult(data);
+    fetch('../php/QCM.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        displayResult(data);
     })
     .catch((error) => console.error("Error submitting answers:", error));
 }
