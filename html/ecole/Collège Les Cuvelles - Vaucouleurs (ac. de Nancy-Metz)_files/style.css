@@ -1,0 +1,678 @@
+/* ===== Thème clair NuméLiD (sans dark mode) ===== */
+:root {
+	--nc-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+	  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	--nc-font-mono: Consolas, monaco, "Ubuntu Mono", "Liberation Mono",
+	  "Courier New", Courier, monospace;
+  
+	/* Palette neutre (fond clair + bonnes bordures) */
+	--nc-tx-1: #101114;       /* Texte principal */
+	--nc-tx-2: #2b2e34;       /* Texte secondaire */
+	--nc-bg-1: #ffffff;       /* Fond principal (blanc propre) */
+	--nc-bg-2: #f4f6fa;       /* Panneaux, encarts, code */
+	--nc-bg-3: #e6e9f0;       /* Bordures, séparateurs */
+  
+	/* Couleurs NuméLiD (cohérentes avec le logo) */
+	--nl-blue:   #287de7;
+	--nl-purple: #7a3ff2;
+	--nl-magenta:#d042e6;
+	--nl-orange: #ff7a59;
+	--nl-yellow: #f6c244;
+  
+	/* Dégradé signature NuméLiD */
+	--nl-gradient: linear-gradient(90deg,
+					   var(--nl-blue) 0%,
+					   var(--nl-purple) 25%,
+					   var(--nl-magenta) 50%,
+					   var(--nl-orange) 75%,
+					   var(--nl-yellow) 100%);
+  
+	/* Liens/CTA (point d’entrée accessible) */
+	--nc-lk-1: var(--nl-purple);  /* Lien normal */
+	--nc-lk-2: var(--nl-magenta); /* Hover/Focus */
+	--nc-lk-tx: #ffffff;
+  
+	/* Accent plein (pour sélection, badges, etc.) */
+	--nc-ac-1: var(--nl-purple);
+	--nc-ac-tx: #ffffff;
+  
+	/* Ombres douces */
+	--nl-shadow: 0 4px 14px rgba(22, 28, 45, 0.06);
+  }
+  
+  a { color: var(--nc-lk-1); text-decoration: none; }
+  a:hover, a:focus { color: var(--nc-lk-2); text-decoration: none; }
+
+nav .social-links {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	list-style: none;
+	
+	--social-icon-size: 2em;
+	a {
+		padding: calc(var(--social-icon-size) + 1em) 0;
+		background-size: var(--social-icon-size);
+		background-position: left center;
+		background-repeat: no-repeat;
+		padding-left: calc(var(--social-icon-size) + 0.5em);
+	}
+	
+	a.gitlab{
+		background-image: url(https://forge.apps.education.fr/uploads/-/system/appearance/header_logo/1/header.png);
+	}
+	
+	a.mastodon{
+		background-image: url(https://joinmastodon.org/logos/logo-purple.svg)
+	}
+	a.tchap{
+		background-image: url(/assets/tchap.png);
+	}
+	a.tux{
+	    background-image: url(/assets/tux.png);
+	}
+}
+
+  /* ===== Navbar ===== */
+  .navbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-bottom: 1.5rem;
+	padding: 0.7rem 0.5rem;
+	background: var(--nc-bg-2);
+	border: 1px solid var(--nc-bg-3);
+	border-radius: 12px;
+	justify-content: center;
+	max-width: 100%;
+	box-sizing: border-box;
+	box-shadow: var(--nl-shadow);
+  }
+  
+  .navbar a {
+	display: inline-block;
+	min-width: 140px;
+	text-align: center;
+	text-decoration: none;
+	padding: 0.55rem 1.1rem;
+	border: 2px solid var(--nl-purple);
+	border-radius: 10px;
+	background: #ffffff;
+	color: var(--nl-purple);
+	font-weight: 700;
+	font-size: 1.05rem;
+	transition: transform .08s ease-out, box-shadow .2s, background .2s, color .2s, border-color .2s;
+	margin-bottom: 0.25rem;
+	box-sizing: border-box;
+	word-break: break-word;
+  }
+  
+  .navbar a:hover,
+  .navbar a:focus {
+	background: var(--nl-purple);
+	color: #ffffff;
+	border-color: var(--nl-purple);
+	outline: none;
+	box-shadow: 0 6px 18px rgba(122, 63, 242, 0.25);
+	transform: translateY(-1px);
+  }
+  
+  @media (max-width: 600px) {
+	.navbar a {
+	  min-width: 95px;
+	  font-size: 0.96rem;
+	  padding: 0.5rem 0.6rem;
+	}
+	.navbar {
+	  gap: 0.4rem;
+	  padding: 0.5rem 0.2rem;
+	}
+
+	img {
+        max-width:100%;
+    }
+  }
+  
+  /* Masquage progressif du nav + spinner */
+  nav.navbar {
+	opacity: 0;
+	min-height: 55px;
+	transition: opacity 0.35s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  nav.navbar.loaded { opacity: 1; }
+  
+  
+  @media (max-width: 600px) {
+	nav.navbar { min-height: 40px; }
+  }
+
+  /* ===== Abstract ==== */
+  #abstract{
+      font-style: italic;
+  }
+  /* ===== Base ===== */
+  * { margin: 0; padding: 0; }
+  button, html, input, select { font-family: var(--nc-font-sans); }
+  
+  body {
+	margin: 0 auto;
+	max-width: 950px;
+	padding: 2rem;
+	border-radius: 10px;
+	overflow-x: hidden;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	background: var(--nc-bg-1);
+	color: var(--nc-tx-2);
+	font-size: 1.03rem;
+	line-height: 1.55;
+  }
+  
+  ::selection {
+	background: var(--nc-ac-1);
+	color: var(--nc-ac-tx);
+  }
+  
+  h1{
+	line-height: 1.1;
+	color: var(--nc-tx-1);
+	padding-top: 0;
+  }
+
+ /* h1 utilisé comme conteneur flex */
+ h1 {
+	display: flex;
+	align-items: center;
+  }
+  
+
+  img.svgenligne {
+	all: unset;
+	display: inline;
+  }
+
+  /* Coin arrondi et ombre à la Romain */
+  img.like_romain {
+	border-radius: 1em;
+	box-shadow:
+	  -4px 0 8px -4px rgba(0, 0, 0, 0.2),
+	   4px 0 8px -4px rgba(0, 0, 0, 0.2);
+	max-width: 75%;
+	display: block;
+	margin: 1rem auto;
+  }
+
+	figure { 
+		margin: 1rem auto;
+		text-align: center;     
+	}
+	
+	figcaption,
+	.figure p.caption,
+	.caption {
+		text-align: left;  
+		font-style: italic;
+		margin-top: .5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	figure,
+	figure > img,
+	figcaption,
+	.figure p.caption,
+	.caption,
+	img:not(.svgenligne) {
+	width: 90%;
+	max-width: 90%;
+	display: block;
+	margin-left: 0;
+	}
+
+	figure { 
+	text-align: left;
+	margin: 1.5rem 0;           /* espace autour de la figure */
+	}
+
+	figure > img,
+	img:not(.svgenligne) {
+	margin: 1.25rem 0 1.25rem;  /* espace au-dessus et en dessous */
+	}
+	
+	img.forge_footer{
+		margin:0;
+		width:40%;
+	}
+
+	h1 img {
+		height: 2.25em;
+		width: auto;
+		object-fit: contain;
+	  }
+  
+
+  h1,h2,h3,h4,h5,h6 {
+	line-height: 1.1;
+	color: var(--nc-tx-1);
+  }
+  
+  h1,h2,h3 {
+	padding-bottom: 2px;
+	margin-bottom: 8px;
+	border-image: var(--nl-gradient) 1;
+  }
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.85rem; }
+  h3 { font-size: 1.55rem; }
+  h4 { font-size: 1.25rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.875rem; }
+  
+
+  p {
+    margin: 1em 0;
+    }
+	  
+
+  a { color: var(--nc-lk-1); text-decoration-thickness: 2px; }
+  a:hover { color: var(--nc-lk-2); }
+  
+  blockquote {
+	padding: 1.3rem 1.5rem;
+	background: var(--nc-bg-2);
+	border-left: 6px solid var(--nl-purple);
+	border-radius: 8px;
+	box-shadow: var(--nl-shadow);
+  }
+  blockquote :last-child { margin-bottom: 0; }
+  
+  header {
+	background: var(--nc-bg-2);
+	border-bottom: 1px solid var(--nc-bg-3);
+	margin: -2rem calc(0px - (50vw - 50%)) 1rem;
+	padding: 1rem calc(50vw - 50%) 0;
+	box-shadow: var(--nl-shadow);
+  }
+  
+  /* ===== Boutons & CTA ===== */
+  a button,
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+	font-size: 1rem;
+	display: inline-block;
+	padding: 8px 14px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	background: var(--nl-purple);
+	color: var(--nc-lk-tx);
+	border: 0;
+	border-radius: 10px;
+	box-sizing: border-box;
+	cursor: pointer;
+	box-shadow: var(--nl-shadow);
+  }
+  button:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover {
+	background: var(--nc-lk-2);
+  }
+  
+  /* Version bouton en dégradé NuméLiD (optionnelle) */
+  .btn-gradient {
+	background: var(--nl-gradient);
+	color: #101114;
+	border: 0;
+  }
+  .btn-gradient:hover {
+	filter: saturate(1.1) brightness(1.02);
+	box-shadow: 0 8px 24px rgba(32, 35, 51, 0.15);
+  }
+  
+  /* ===== Code & contenus ===== */
+  code,kbd,pre,samp {
+	font-family: var(--nc-font-mono);
+	background: var(--nc-bg-2);
+	border: 1px solid var(--nc-bg-3);
+	border-radius: 8px;
+	padding: 3px 6px;
+	font-size: 0.92rem;
+  }
+  kbd { border-bottom: 3px solid var(--nc-bg-3); }
+  pre { padding: 1rem 1.4rem; max-width: 100%; overflow: auto; }
+  pre code { background: inherit; border: 0; padding: 0; }
+  
+  /* Détails / accordéons */
+  details {
+	padding: 0.7rem 1rem;
+	background: var(--nc-bg-2);
+	border: 1px solid var(--nc-bg-3);
+	border-radius: 8px;
+	box-shadow: var(--nl-shadow);
+  }
+  summary { cursor: pointer; font-weight: 700; }
+  
+  /* Tables & formulaires */
+  table { border-collapse: collapse; width: 100%; }
+  td, th {
+	border: 1px solid var(--nc-bg-3);
+	text-align: left;
+	padding: 0.55rem;
+  }
+  th { background: var(--nc-bg-2); }
+  
+  input,select,textarea {
+	padding: 8px 12px;
+	margin-bottom: 0.6rem;
+	background: var(--nc-bg-2);
+	color: var(--nc-tx-2);
+	border: 1px solid var(--nc-bg-3);
+	border-radius: 10px;
+	box-shadow: none;
+	box-sizing: border-box;
+  }
+  
+  /* Encarts info / danger / succès */
+  .info, .danger, .success {
+	padding: 12px 16px;
+	padding-top: 1.2rem;
+	border-radius: 12px;
+	margin: 1rem 0;
+	background-color: #fff;
+	box-shadow: var(--nl-shadow);
+  }
+  .info   { color: var(--nl-blue);   border: 1px solid var(--nl-blue); }
+  .danger { color: #b94a48;          border: 1px solid #b94a48; }
+  .success{ color: #018739;          border: 1px solid #018739; }
+  
+  /* Titres avec léger séparateur */
+  h2, h3 {
+	margin-top: 2.2rem;
+	margin-bottom: 1.6rem;
+	padding-bottom: 0.6em;
+	border-bottom: 1px solid var(--nc-bg-3);
+  }
+  h4, h5, h6 {
+	margin-top: 1.8rem;
+	margin-bottom: 1.2rem;
+  }
+  
+  /* TOC */
+  .general-toc {
+	background-color: var(--nc-bg-2);
+	padding: 20px;
+	margin: 1em;
+	border: 1px solid var(--nc-bg-3);
+	border-radius: 12px;
+	box-shadow: var(--nl-shadow);
+  }
+  @media screen and (min-width: 800px) {
+	.general-toc { margin: 3em; }
+  }
+  
+  /* ===== Utilitaires NuméLiD ===== */
+  
+  /* Texte en dégradé façon logo (pour “NuméLiD” par ex.) */
+  .brand-gradient {
+	background: var(--nl-gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+  }
+  
+  /* Séparateur “pixel” (rappel discret de la pixellisation) */
+  .pixel-sep {
+	--sz: 6px;
+	background-image:
+	  linear-gradient(to right, var(--nl-purple) 50%, transparent 0),
+	  linear-gradient(to right, var(--nl-purple) 50%, transparent 0);
+	background-size: var(--sz) 2px, var(--sz) 2px;
+	background-repeat: repeat-x;
+	background-position: left top, left bottom;
+	padding-top: 10px; padding-bottom: 10px;
+	border: 0;
+  }
+  
+/* Marge autour des séparateurs horizontaux */
+hr {
+	border: 0;
+	border-bottom: 1px solid var(--nc-bg-3);
+	margin: 1.5rem 0; /* plus d’espace avant/après */
+  }
+  
+  /* Listes à puces et numérotées */
+  ul, ol {
+	padding-left: 2.2rem; /* augmente le retrait à gauche */
+	margin-top: 0.5rem;
+	margin-bottom: 1.2rem;
+  }
+  
+  li {
+	margin-top: 0.4rem;
+  }
+  
+
+
+/* Spinner et navbar dark mode */
+@media (prefers-color-scheme: dark) {
+	.navbar-spinner {
+	  border: 4px solid var(--nc-bg-2);
+	  border-top: 4px solid var(--nc-lk-1);
+	}
+  }
+  
+  @media (prefers-color-scheme: dark) {
+	  :root {
+		  --nc-tx-1: #ffffff;
+		  --nc-tx-2: #e0e0e0;
+  
+		  --nc-bg-1: #0c0c0c;
+		  --nc-bg-2: #1a1a1a;
+		  --nc-bg-3: #2e2e2e;
+  
+		  --nc-lk-1: #60c6ff;       /* Liens en mode sombre */
+		  --nc-lk-2: #3da9fc;
+		  --nc-lk-tx: #000000;
+  
+		  --nc-ac-1: #fcb43a;       /* Accent mode sombre */
+		  --nc-ac-tx: #000000;
+	  }
+  }
+  
+  /* MODE SOMBRE AUTOMATIQUE */
+  @media (prefers-color-scheme: dark) {
+	.navbar {
+	  background: #22252a;
+	}
+	.navbar a {
+	  background: #333b47;
+	  border-color: #0087ff;
+	  color: #fff;
+	}
+	.navbar a:hover,
+	.navbar a:focus {
+	  background: #fff;
+	  color: #0074d9;
+	  border-color: #0074d9;
+	}
+  }
+  
+
+@media (prefers-color-scheme: dark) {
+	.info,
+	.danger,
+	.success {
+		background-color: var(--nc-bg-2);
+	}
+}
+
+@media (max-width: 600px) {
+    .navbar a {
+	   min-width: 95px;
+	   font-size: 0.96rem;
+	   padding: 0.5rem 0.6rem;
+	   }
+    .navbar {
+		gap: 0.4rem;
+		padding: 0.5rem 0.2rem;
+		}
+	
+	
+	
+	img { max-width: 100%; }
+
+	img.svgenligne {
+		all: unset;
+		display: inline;
+	  }
+
+	nav.navbar { min-height: 40px; }
+}
+
+/* ===== Nav mobile (toggle) ===== */
+/* Conteneur ajouté par le script : input[type=checkbox] + label + nav */
+.nav-wrap { position: relative; }
+
+/* Cache visuellement le checkbox, tout en restant accessible au label */
+.nav-toggle {
+	position: absolute !important;
+	inset: 0 auto auto -9999px !important;
+	width: 1px; height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* Bouton (icône) — masqué par défaut (desktop) */
+.nav-toggle-label {
+	display: none;               /* visible seulement en mobile */
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	margin: 0 0 .6rem;
+	border: 1px solid var(--nc-bg-3);
+	border-radius: 10px;
+	background: var(--nc-bg-2);
+	box-shadow: var(--nl-shadow);
+	cursor: pointer;
+}
+
+
+
+.nav-toggle-label img { display: block; pointer-events: none; }
+
+/* Desktop : le menu est toujours visible, on cache le bouton */
+@media (min-width: 601px) {
+	.nav-toggle-label { display: none; }
+	.nav-wrap .nav-menu {
+		opacity: 1;
+		max-height: none;
+		pointer-events: auto;
+	}
+}
+
+/* Mobile : bouton visible, nav replié par défaut, déplié quand coché */
+@media (max-width: 600px) {
+	h1 {
+		font-size: 1.75em!important;
+	}
+	
+	/* Affiche le bouton hamburger */
+	.nav-toggle-label { display: inline-flex; }
+
+	/* Nav complètement cachée par défaut */
+	.nav-wrap .nav-menu {
+		display: none !important;   /* override du display:flex global */
+		min-height: 0 !important;   /* évite l'espace fantôme */
+		margin: 0;
+		padding: 0;
+		border: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	/* Dépliage quand l’input est coché */
+	.nav-wrap .nav-toggle:checked ~ .nav-menu {
+		display: flex !important;
+		flex-direction: column;
+		gap: .4rem;
+		opacity: 1;
+		pointer-events: auto;
+		/* on restaure le style souhaité à l'ouverture */
+		margin: 0.5rem 0;
+		padding: 0.5rem 0.2rem;
+		border: 1px solid var(--nc-bg-3);
+		border-radius: 12px;
+	}
+
+	/* Confort d’appui : liens en largeur fluide */
+	.nav-wrap .nav-menu a {
+		width: 100%;
+	}
+
+	img.forge_footer{
+		margin:0;
+		width:70%;
+	}
+
+
+	figure,
+	figure > img,
+	figcaption,
+	.figure p.caption,
+	.caption,
+	img:not(.svgenligne) {
+	  width: 100%;
+	  max-width: 100%;
+	}
+
+}
+
+
+
+/* Thème sombre : bouton cohérent */
+@media (prefers-color-scheme: dark) {
+	.nav-toggle-label {
+		background: var(--nc-bg-2);
+		border-color: var(--nc-bg-3);
+	}
+	img.svgenligne {
+		filter: brightness(0) invert(1);
+	  }
+}
+
+footer {
+	background: var(--nc-bg-2);
+	padding: 1.5rem 1rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	border-top: 1px solid var(--nc-bg-3);
+	box-shadow: var(--nl-shadow);
+	font-size: 0.95rem;
+	color: var(--nc-tx-2);
+  }
+  
+  footer a {
+	color: var(--nc-lk-1);
+	text-decoration: none;
+  }
+  
+  footer a:hover {
+	color: var(--nc-lk-2);
+	text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+	footer {
+	  flex-direction: column;
+	}
+  }
+  
