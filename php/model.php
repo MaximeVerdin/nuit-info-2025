@@ -13,81 +13,71 @@ class QCMModel {
                 [
                     'rowid' => 1,
                     'contenu' => json_encode([
-                        'question' => 'Que signifie NIRD ?',
-                        'options' => ['Numérique Inclusif Responsable Durable', 'Nouvelle Initiative pour le Réel Développement', 'Numérique Intelligent et Révolutionnaire Durable', 'Nouveau Internet pour la Recherche et la Découverte'],
-                        'correct' => 0
+                        'question' => 'Quel usage faites-vous le plus souvent du numérique dans vos activités sportives ?',
+                        'options' => ['Suivi d’entraînement', 'Vidéos/coachings en ligne', 'Communication', 'Organisation de sorties', 'Aucun']
                     ])
                 ],
                 [
                     'rowid' => 2,
                     'contenu' => json_encode([
-                        'question' => 'Quel système d\'exploitation la démarche NIRD promeut-elle principalement ?',
-                        'options' => ['Windows', 'macOS', 'Linux', 'Android'],
-                        'correct' => 2
+                        'question' => 'Lorsque vous suivez un programme sportif, quel type d’application privilégiez-vous ?',
+                        'options' => ['Logiciels libres', 'Applications classiques du store', 'Outils web accessibles', 'Aucun outil particulier']
                     ])
                 ],
                 [
                     'rowid' => 3,
                     'contenu' => json_encode([
-                        'question' => 'Pourquoi la fin du support de Windows 10 est-elle favorable à la démarche NIRD ?',
-                        'options' => ['Elle rend les machines obsolètes artificiellement', 'Elle encourage la migration vers des OS libres', 'Elle réduit les coûts pour Microsoft', 'Elle améliore la sécurité de Windows'],
-                        'correct' => 1
+                        'question' => 'Êtes-vous sensible à l’impact environnemental de votre matériel sportif ou numérique ?',
+                        'options' => ['Oui très', 'Un peu', 'Peu', 'Pas du tout']
                     ])
                 ],
                 [
                     'rowid' => 4,
                     'contenu' => json_encode([
-                        'question' => 'Qu\'est-ce que PrimTux ?',
-                        'options' => ['Une distribution Linux conçue pour les écoles', 'Un logiciel de bureautique', 'Un outil de reconditionnement', 'Une plateforme de formation en ligne'],
-                        'correct' => 0
+                        'question' => 'Que privilégiez-vous pour votre équipement sportif ou numérique ?',
+                        'options' => ['Durabilité', 'Polyvalence', 'Prix maîtrisé', 'Réparabilité']
                     ])
                 ],
                 [
                     'rowid' => 5,
                     'contenu' => json_encode([
-                        'question' => 'Quel pourcentage de l\'impact environnemental du numérique provient de la fabrication des équipements ?',
-                        'options' => ['25%', '50%', '75%', '90%'],
-                        'correct' => 2
+                        'question' => 'Avez-vous déjà utilisé un appareil reconditionné pour vos activités sportives ?',
+                        'options' => ['Oui', 'Occasionnellement', 'Non mais pourquoi pas', 'Non']
                     ])
                 ],
                 [
                     'rowid' => 6,
                     'contenu' => json_encode([
-                        'question' => 'Quel est l\'objectif de réemploi des biens informatiques en 2025 selon la loi AGEC ?',
-                        'options' => ['25%', '50%', '75%', '100%'],
-                        'correct' => 1
+                        'question' => 'Quel type d’outil numérique vous aide le plus dans votre pratique sportive ?',
+                        'options' => ['Montre/bracelet connecté', 'Smartphone', 'PC portable', 'Aucun équipement numérique']
                     ])
                 ],
                 [
                     'rowid' => 7,
                     'contenu' => json_encode([
-                        'question' => 'Selon la Doctrine technique du numérique pour l\'éducation, que permettent les services d\'infrastructures numériques choisis ?',
-                        'options' => ['Intégrer des machines utilisant différents systèmes d\'exploitation pour la neutralité technologique', 'Forcer l\'usage de Windows uniquement', 'Limiter l\'accès à Internet', 'Augmenter les coûts d\'équipement'],
-                        'correct' => 0
+                        'question' => 'Pour vos séances ou randonnées, quels critères sont les plus importants pour vous ?',
+                        'options' => ['Autonomie de l’appareil', 'Robustesse', 'Légèreté', 'Prix', 'Sobriété numérique']
                     ])
                 ],
                 [
                     'rowid' => 8,
                     'contenu' => json_encode([
-                        'question' => 'Quelle est la principale motivation de la démarche NIRD selon le document ?',
-                        'options' => ['Réduire les coûts informatiques', 'Répondre à l\'urgence écologique et à l\'obsolescence programmée', 'Promouvoir les logiciels propriétaires', 'Augmenter la dépendance aux grandes entreprises'],
-                        'correct' => 1
+                        'question' => 'Avez-vous déjà cherché des alternatives libres ou responsables pour suivre vos efforts ?',
+                        'options' => ['Oui souvent', 'Oui une fois', 'Pas encore', 'Non']
                     ])
                 ],
                 [
                     'rowid' => 9,
                     'contenu' => json_encode([
-                        'question' => 'Quelles collectivités sont citées comme s\'orientant vers les logiciels libres ?',
-                        'options' => ['Paris, Marseille, Toulouse', 'Lyon, Grenoble, Strasbourg', 'Bordeaux, Lille, Nantes', 'Nice, Rennes, Dijon'],
-                        'correct' => 1
+                        'question' => 'Quel type de conseils vous serait le plus utile pour concilier sport et numérique responsable ?',
+                        'options' => ['Limiter l’impact environnemental', 'Réduire la dépendance aux applications', 'Optimiser l’équipement existant', 'Choisir des produits durables']
                     ])
                 ],
                 [
                     'rowid' => 10,
                     'contenu' => json_encode([
-                        'question' => 'Quel est le rôle de la Forge des communs numériques éducatifs dans la démarche NIRD ?',
-                        'options' => ['Vendre des logiciels propriétaires', 'Réunir, fédérer, mutualiser et documenter les efforts', 'Contrôler l\'usage des ordinateurs dans les écoles', 'Développer des applications mobiles'],
-                        'correct' => 1
+                        'question' => 'Êtes-vous intéressé par des recommandations de matériel sportif durable ou polyvalent ?',
+                        'options' => ['Oui', 'Oui pour débuter', 'Occasionnellement', 'Non']
                     ])
                 ]
             ];
@@ -119,7 +109,6 @@ class QCMModel {
                 $data = json_decode($q['contenu'], true);
                 $q['question'] = $data['question'];
                 $q['options'] = $data['options'];
-                $q['correct'] = $data['correct'];
             }
             return $questions;
         } else {
@@ -129,8 +118,7 @@ class QCMModel {
                 $questions[] = [
                     'rowid' => $q['rowid'],
                     'question' => $data['question'],
-                    'options' => $data['options'],
-                    'correct' => $data['correct']
+                    'options' => $data['options']
                 ];
             }
             return $questions;
@@ -173,14 +161,9 @@ class QCMModel {
 
     public function checkAnswers($answers) {
         $questions = $this->getQuestions();
-        $score = 0;
         $total = count($questions);
-        foreach ($questions as $question) {
-            if (isset($answers[$question['rowid']]) && $answers[$question['rowid']] == $question['correct']) {
-                $score++;
-            }
-        }
-        return ['score' => $score, 'total' => $total];
+        $answered = count($answers);
+        return ['answered' => $answered, 'total' => $total];
     }
 
     // User Management Methods
