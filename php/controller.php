@@ -11,6 +11,12 @@ class QCMController {
 
     public function handleRequest() {
         $result = null;
+        if (isset($_GET['logout'])) {
+            $this->logout();
+            unset($_SESSION['user_name']);
+            header('Location: QCM.php');
+            exit;
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['answers'])) {
                 $answers = $_POST['answers'];
@@ -31,6 +37,7 @@ class QCMController {
                 $user_id = $this->model->loginUser($nom, $password);
                 if ($user_id) {
                     $_SESSION['user_id'] = $user_id;
+                    $_SESSION['user_name'] = $nom;
                     $result = 'logged_in';
                 } else {
                     $result = 'login_failed';
