@@ -1,0 +1,479 @@
+/* Modern Gradient Theme - Contemporary & Sleek Design */
+
+:root {
+  --primary-blue: #0066ff;
+  --primary-purple: #7c3aed;
+  --accent-magenta: #d946ef;
+  --warm-orange: #ff8c00;
+  --highlight-yellow: #ffd700;
+  --bg-dark: #0f0a1a;
+  --bg-darker: #1a0f2e;
+  --bg-light: #2d1b3d;
+  --text-primary: #ffffff;
+  --text-secondary: #c0c0e0;
+  --border-subtle: rgba(217, 70, 239, 0.2);
+  --border-strong: rgba(217, 70, 239, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--bg-light) 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Improved header layout with better logo positioning and spacing */
+header {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.08) 0%,
+    rgba(124, 58, 237, 0.08) 50%,
+    rgba(217, 70, 239, 0.08) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-strong);
+  padding: 2rem 2rem;
+  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.1), 0 0 100px rgba(215, 0, 255, 0.05);
+  position: relative;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0 0 1rem 0;
+  flex-wrap: wrap;
+}
+
+header h1 a {
+  display: flex;
+  align-items: center;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+header h1 a:hover {
+  transform: scale(1.05);
+}
+
+/* Improved logo styling with proper sizing */
+header img {
+  max-width: 120px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 102, 255, 0.15));
+  transition: filter 0.3s ease;
+}
+
+header img:hover {
+  filter: drop-shadow(0 15px 40px rgba(217, 70, 239, 0.2));
+}
+
+header h1 span {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--accent-magenta));
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+header h2 {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Improved navigation styling and mobile menu positioning */
+.nav-wrap {
+  position: relative;
+  z-index: 100;
+}
+
+.nav-toggle-label {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  display: none;
+}
+
+.nav-toggle-label:hover {
+  background: linear-gradient(135deg, #0080ff, #9d5cff);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.navbar {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(45, 27, 61, 0.95) 100%);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border-strong);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 102, 255, 0.08);
+}
+
+.navbar p {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(124, 58, 237, 0.1));
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navbar a:hover {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.3), rgba(217, 70, 239, 0.3));
+  border: 1px solid rgba(217, 70, 239, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
+}
+
+/* Mobile menu positioning and styling improvements */
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  header h1 span {
+    font-size: 1.3rem;
+  }
+
+  header img {
+    max-width: 100px;
+  }
+
+  header h2 {
+    font-size: 0.95rem;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .navbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 5rem;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    z-index: 1000;
+    border-radius: 0;
+  }
+
+  .nav-toggle:checked ~ .navbar {
+    display: flex;
+  }
+
+  .navbar p {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Main content */
+main {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.6) 0%, rgba(45, 27, 61, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 60px rgba(0, 102, 255, 0.08), 0 0 100px rgba(215, 0, 255, 0.03);
+}
+
+main p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 1.5rem 0;
+  font-weight: 400;
+}
+
+main strong {
+  color: var(--highlight-yellow);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  font-weight: 600;
+}
+
+main h2 {
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2rem;
+  margin: 2.5rem 0 1.5rem 0;
+  font-weight: 700;
+}
+
+main h3 {
+  color: var(--warm-orange);
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  font-weight: 600;
+}
+
+/* Lists */
+ul,
+ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+li {
+  margin: 0.75rem 0;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+li:hover {
+  color: var(--highlight-yellow);
+  padding-left: 0.5rem;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 30px 70px rgba(217, 70, 239, 0.2);
+}
+
+figure {
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+figcaption {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+/* Code */
+code {
+  background: rgba(0, 102, 255, 0.1);
+  color: var(--highlight-yellow);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9em;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* Links */
+a {
+  color: var(--primary-blue);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--accent-magenta);
+  text-decoration: underline;
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 4px solid var(--primary-blue);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(124, 58, 237, 0.1));
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 102, 255, 0.08);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-strong);
+  padding: 2.5rem;
+  margin-top: 3rem;
+  color: var(--text-secondary);
+  text-align: center;
+  box-shadow: 0 -20px 50px rgba(0, 102, 255, 0.08);
+}
+
+footer a {
+  color: var(--primary-blue);
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent-magenta);
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.social-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li::before {
+  display: none;
+}
+
+.social-links a {
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(124, 58, 237, 0.2));
+  border: 1px solid rgba(217, 70, 239, 0.4);
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.social-links a:hover {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.4), rgba(217, 70, 239, 0.4));
+  border: 1px solid rgba(217, 70, 239, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
+}
+
+/* Improved responsive design for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  main h2 {
+    font-size: 1.6rem;
+  }
+
+  main h3 {
+    font-size: 1.3rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .social-links a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 span {
+    font-size: 1.1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  main h2 {
+    font-size: 1.4rem;
+  }
+
+  main h3 {
+    font-size: 1.1rem;
+  }
+
+  .navbar a {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+  }
+}
