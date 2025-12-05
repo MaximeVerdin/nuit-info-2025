@@ -167,7 +167,10 @@ class QCMModel {
         // Analyze answers for advice
         $advice = $this->generateAdvice($answers, $questions);
 
-        return ['answered' => $answered, 'total' => $total, 'advice' => $advice];
+        // Generate product suggestions
+        $suggestions = $this->generateSuggestions($answers, $questions);
+
+        return ['answered' => $answered, 'total' => $total, 'advice' => $advice, 'suggestions' => $suggestions];
     }
 
     private function generateAdvice($answers, $questions) {
@@ -250,6 +253,111 @@ class QCMModel {
         }
 
         return implode(" ", $advice);
+    }
+
+    private function generateSuggestions($answers, $questions) {
+        $suggestions = [];
+
+        // Question 1: Usage numérique
+        if (isset($answers[1])) {
+            $usage = $questions[0]["options"][$answers[1]];
+            if (strpos($usage, "Suivi d’entraînement") !== false) {
+                $suggestions[] = ['name' => 'Montres de sport', 'url' => 'https://www.decathlon.fr/search?Ntt=Montres+de+sport', 'description' => 'Pour suivre vos performances en temps réel.'];
+            }
+            if (strpos($usage, "Vidéos/coachings en ligne") !== false) {
+                $suggestions[] = ['name' => 'Tapis de yoga', 'url' => 'https://www.decathlon.fr/search?Ntt=Tapis+de+yoga', 'description' => 'Idéal pour vos séances de relaxation et d\'étirement.'];
+            }
+        }
+
+        // Question 3: Sensibilité environnementale
+        if (isset($answers[3])) {
+            $impact = $questions[2]["options"][$answers[3]];
+            if ($impact === "Oui très" || $impact === "Un peu") {
+                $suggestions[] = ['name' => 'Équipements durables', 'url' => 'https://www.decathlon.fr/search?Ntt=Équipements+durables', 'description' => 'Matériel sportif respectueux de l\'environnement.'];
+            }
+        }
+
+        // Question 4: Préférences équipement
+        if (isset($answers[4])) {
+            $pref = $questions[3]["options"][$answers[4]];
+            if ($pref === "Durabilité") {
+                $suggestions[] = ['name' => 'Vêtements recyclés', 'url' => 'https://www.decathlon.fr/search?Ntt=Vêtements+recyclés', 'description' => 'Tenues sportives fabriquées à partir de matériaux recyclés.'];
+            }
+            if ($pref === "Réparabilité") {
+                $suggestions[] = ['name' => 'Équipements modulaires', 'url' => 'https://www.decathlon.fr/search?Ntt=Équipements+modulaires', 'description' => 'Matériel facilement réparable et personnalisable.'];
+            }
+        }
+
+        // Question 5: Expérience reconditionnement
+        if (isset($answers[5])) {
+            $recond = $questions[4]["options"][$answers[5]];
+            if ($recond === "Oui" || $recond === "Occasionnellement") {
+                $suggestions[] = ['name' => 'Produits reconditionnés', 'url' => 'https://www.decathlon.fr/search?Ntt=Produits+reconditionnés', 'description' => 'Équipements sportifs remis à neuf, économiques et écologiques.'];
+            }
+        }
+
+        // Question 6: Type d'outil numérique
+        if (isset($answers[6])) {
+            $outil = $questions[5]["options"][$answers[6]];
+            if ($outil === "Montre/bracelet connecté") {
+                $suggestions[] = ['name' => 'Montres connectées', 'url' => 'https://www.decathlon.fr/search?Ntt=Montres+connectées', 'description' => 'Pour un suivi précis de vos activités sportives.'];
+            }
+            if ($outil === "Smartphone") {
+                $suggestions[] = ['name' => 'Accessoires smartphone', 'url' => 'https://www.decathlon.fr/search?Ntt=Accessoires+smartphone', 'description' => 'Supports et protections pour vos entraînements.'];
+            }
+        }
+
+        // Question 7: Critères importants
+        if (isset($answers[7])) {
+            $critere = $questions[6]["options"][$answers[7]];
+            if ($critere === "Autonomie de l’appareil") {
+                $suggestions[] = ['name' => 'Batteries externes', 'url' => 'https://www.decathlon.fr/search?Ntt=Batteries+externes', 'description' => 'Pour prolonger l\'autonomie de vos appareils.'];
+            }
+            if ($critere === "Robustesse") {
+                $suggestions[] = ['name' => 'Équipements outdoor', 'url' => 'https://www.decathlon.fr/search?Ntt=Équipements+outdoor', 'description' => 'Matériel résistant pour toutes conditions.'];
+            }
+            if ($critere === "Légèreté") {
+                $suggestions[] = ['name' => 'Vêtements techniques légers', 'url' => 'https://www.decathlon.fr/search?Ntt=Vêtements+techniques+légers', 'description' => 'Tenues légères et performantes.'];
+            }
+        }
+
+        // Question 8: Alternatives libres
+        if (isset($answers[8])) {
+            $alt = $questions[7]["options"][$answers[8]];
+            if ($alt === "Oui souvent" || $alt === "Oui une fois") {
+                $suggestions[] = ['name' => 'Applications open source', 'url' => 'https://www.decathlon.fr/search?Ntt=Applications+open+source', 'description' => 'Outils numériques respectueux de votre vie privée.'];
+            }
+        }
+
+        // Question 9: Conseils utiles
+        if (isset($answers[9])) {
+            $conseil = $questions[8]["options"][$answers[9]];
+            if ($conseil === "Limiter l’impact environnemental") {
+                $suggestions[] = ['name' => 'Produits écologiques', 'url' => 'https://www.decathlon.fr/search?Ntt=Produits+écologiques', 'description' => 'Équipements respectueux de l\'environnement.'];
+            }
+            if ($conseil === "Choisir des produits durables") {
+                $suggestions[] = ['name' => 'Matériel durable', 'url' => 'https://www.decathlon.fr/search?Ntt=Matériel+durable', 'description' => 'Produits conçus pour durer dans le temps.'];
+            }
+        }
+
+        // Question 10: Recommandations
+        if (isset($answers[10])) {
+            $reco = $questions[9]["options"][$answers[10]];
+            if ($reco === "Oui" || $reco === "Oui pour débuter") {
+                $suggestions[] = ['name' => 'Équipements polyvalents', 'url' => 'https://www.decathlon.fr/search?Ntt=Équipements+polyvalents', 'description' => 'Matériel adapté à plusieurs activités sportives.'];
+            }
+        }
+
+        // Remove duplicates
+        $uniqueSuggestions = [];
+        foreach ($suggestions as $suggestion) {
+            $key = $suggestion['name'];
+            if (!isset($uniqueSuggestions[$key])) {
+                $uniqueSuggestions[$key] = $suggestion;
+            }
+        }
+
+        return array_values($uniqueSuggestions);
     }
 
     // User Management Methods

@@ -9,7 +9,6 @@ $questions = $controller->getQuestions();
 
 include 'header.php';
 ?>
-
 <main>
     <h2>QCM sur la Démarche NIRD</h2>
     <?php if (!$controller->isLoggedIn()): ?>
@@ -33,6 +32,19 @@ include 'header.php';
                 <div class="advice">
                     <h4>Conseils personnalisés :</h4>
                     <p><?php echo $result['advice']; ?></p>
+                </div>
+                <div class="suggestions">
+                    <h4>Suggestion d'achats :</h4>
+                    <p>Basé sur vos réponses, voici quelques suggestions de produits Decathlon pour améliorer votre pratique sportive de manière durable :</p>
+                    <ul>
+                        <?php if (isset($result['suggestions']) && !empty($result['suggestions'])): ?>
+                            <?php foreach ($result['suggestions'] as $suggestion): ?>
+                                <li><a href="<?php echo htmlspecialchars($suggestion['url']); ?>" target="_blank"><?php echo htmlspecialchars($suggestion['name']); ?></a> - <?php echo htmlspecialchars($suggestion['description']); ?></li>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <li>Aucune suggestion spécifique basée sur vos réponses. Découvrez notre sélection générale de produits durables.</li>
+                        <?php endif; ?>
+                    </ul>
                 </div>
                 <a href="QCM.php">Refaire le QCM</a>
             </div>
