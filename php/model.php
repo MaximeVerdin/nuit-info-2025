@@ -163,7 +163,93 @@ class QCMModel {
         $questions = $this->getQuestions();
         $total = count($questions);
         $answered = count($answers);
-        return ['answered' => $answered, 'total' => $total];
+
+        // Analyze answers for advice
+        $advice = $this->generateAdvice($answers, $questions);
+
+        return ['answered' => $answered, 'total' => $total, 'advice' => $advice];
+    }
+
+    private function generateAdvice($answers, $questions) {
+        $advice = [];
+
+        // Group 1: Usage numérique et préférence d'applications (Questions 1-2)
+        if (isset($answers[1]) && isset($answers[2])) {
+            $usage = $questions[0]["options"][$answers[1]];
+            $app_pref = $questions[1]["options"][$answers[2]];
+
+            if (strpos($usage, "Suivi d'entraînement") !== false && $app_pref === "Logiciels libres") {
+                $advice[] = "Vous utilisez le numérique pour le suivi d'entraînement et privilégiez les logiciels libres : c'est un excellent choix pour votre vie privée ! Découvrez des applications comme Sports Tracker ou des outils open source qui respectent vos données.";
+            } elseif (strpos($usage, "Suivi d'entraînement") !== false && $app_pref !== "Logiciels libres") {
+                $advice[] = "Pour votre suivi d'entraînement, considérez passer aux alternatives libres pour une meilleure maîtrise de vos données personnelles.";
+            } elseif ($app_pref === "Logiciels libres") {
+                $advice[] = "Votre préférence pour les logiciels libres est louable ! La communauté NIRD peut vous aider à trouver des alternatives pour toutes vos activités sportives.";
+            }
+        }
+
+        // Group 2: Sensibilité environnementale et préférences équipement (Questions 3-4)
+        if (isset($answers[3]) && isset($answers[4])) {
+            $impact = $questions[2]["options"][$answers[3]];
+            $pref = $questions[3]["options"][$answers[4]];
+
+            if (($impact === "Oui très" || $impact === "Un peu") && ($pref === "Durabilité" || $pref === "Réparabilité")) {
+                $advice[] = "Votre sensibilité environnementale et votre préférence pour la durabilité/réparabilité vous rendent parfait pour la démarche NIRD ! Découvrez les ateliers de reconditionnement informatique dans les écoles.";
+            } elseif ($impact === "Oui très" && $pref !== "Durabilité" && $pref !== "Réparabilité") {
+                $advice[] = "Vous êtes sensible à l'impact environnemental : optez pour des équipements durables et réparables pour réduire l'obsolescence programmée.";
+            }
+        }
+
+        // Group 3: Expérience reconditionnement et type d'outil (Questions 5-6)
+        if (isset($answers[5]) && isset($answers[6])) {
+            $recond = $questions[4]["options"][$answers[5]];
+            $outil = $questions[5]["options"][$answers[6]];
+
+            if (($recond === "Oui" || $recond === "Occasionnellement") && ($outil === "Montre/bracelet connecté" || $outil === "Smartphone")) {
+                $advice[] = "Vous avez déjà expérimenté le reconditionnement et utilisez des équipements connectés : privilégiez les alternatives libres et open source pour une meilleure maîtrise de vos données.";
+            } elseif ($recond === "Non mais pourquoi pas") {
+                $advice[] = "Le reconditionnement est une excellente opportunité pour découvrir des équipements durables à moindre coût. La démarche NIRD peut vous guider dans cette voie.";
+            }
+        }
+
+        // Group 4: Critères importants et alternatives libres (Questions 7-8)
+        if (isset($answers[7]) && isset($answers[8])) {
+            $critere = $questions[6]["options"][$answers[7]];
+            $alt = $questions[7]["options"][$answers[8]];
+
+            if (($critere === "Autonomie de l'appareil" || $critere === "Sobriété numérique") && ($alt === "Oui souvent" || $alt === "Oui une fois")) {
+                $advice[] = "Votre attention à l'autonomie et la sobriété numérique, combinée à votre intérêt pour les alternatives libres, fait de vous un candidat idéal pour Linux ! Découvrez les distributions éducatives comme PrimTux.";
+            } elseif ($alt === "Pas encore") {
+                $advice[] = "Les alternatives libres offrent d'excellentes performances énergétiques et respectent mieux votre vie privée. N'hésitez pas à explorer cette voie.";
+            }
+        }
+
+        // Group 5: Conseils utiles et recommandations (Questions 9-10)
+        if (isset($answers[9]) && isset($answers[10])) {
+            $conseil = $questions[8]["options"][$answers[9]];
+            $reco = $questions[9]["options"][$answers[10]];
+
+            if (($conseil === "Limiter l'impact environnemental" || $conseil === "Choisir des produits durables") && ($reco === "Oui" || $reco === "Oui pour débuter")) {
+                $advice[] = "Votre intérêt pour la durabilité et les produits responsables vous rapproche de la démarche NIRD. Les recommandations de matériel durable sont disponibles sur le site, et les établissements pilotes peuvent vous accompagner.";
+            } elseif ($reco === "Oui pour débuter") {
+                $advice[] = "Pour débuter avec du matériel durable, contactez les établissements pilotes de la démarche NIRD qui proposent des ateliers de reconditionnement.";
+            }
+        }
+
+        // Additional individual advice if no groups matched
+        if (empty($advice)) {
+            if (isset($answers[3]) && ($questions[2]["options"][$answers[3]] === "Oui très" || $questions[2]["options"][$answers[3]] === "Un peu")) {
+                $advice[] = "Votre sensibilité à l'impact environnemental est un atout ! Découvrez les projets de reconditionnement informatique dans les écoles pour réduire l'obsolescence programmée.";
+            }
+            if (isset($answers[8]) && $questions[7]["options"][$answers[8]] === "Pas encore") {
+                $advice[] = "Découvrez les alternatives libres pour vos activités sportives : elles respectent mieux votre vie privée et l'environnement.";
+            }
+        }
+
+        if (empty($advice)) {
+            $advice[] = "Merci d'avoir répondu au QCM ! Pour en savoir plus sur la démarche NIRD, visitez les différentes sections du site et rejoignez la communauté.";
+        }
+
+        return implode(" ", $advice);
     }
 
     // User Management Methods
@@ -198,7 +284,7 @@ class QCMModel {
     // Save user response
     public function saveResponse($id_utilisateur, $id_question, $reponse) {
         if ($this->pdo) {
-            $stmt = $this->pdo->prepare("INSERT INTO Reponses (id_utilisateur, id_question, reponse) VALUES (?, ?, ?)");
+            $stmt = $this->pdo->prepare("INSERT INTO Reponses (id_utilisateur, id_question, reponse) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE reponse = VALUES(reponse)");
             return $stmt->execute([$id_utilisateur, $id_question, $reponse]);
         } else {
             // Fallback: not implemented for array
