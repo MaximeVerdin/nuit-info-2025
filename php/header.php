@@ -20,8 +20,6 @@
             vertical-align: middle;
         }
     </style>
-    <link rel="stylesheet" href="../index_files/style.css">
-    <link rel="stylesheet" href="../index_files/slides-theme.min.css">
 </head>
 <body>
     <header>
