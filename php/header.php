@@ -5,9 +5,6 @@
     <meta name="generator" content="pandoc">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link rel="icon" type="image/x-icon" href="https://nird.forge.apps.education.fr/favicon.ico">
-    <link rel="stylesheet" href="../css/CSSRETRO.css">
-    <link rel="stylesheet" href="../css/gamingcss.css">
-    <link rel="stylesheet" href="../css/style.css">
     <title>QCM - La Démarche NIRD</title>
     <style>
         code{white-space: pre-wrap;}
@@ -45,3 +42,5 @@
             <p><a href="../index.html">🐝 Accueil</a> <a href="../html/demarche.html">🚸 Démarche</a> <a href="../html/pilotes.html">🏫 Pilotes</a> <a href="../html/linux.html">🐧 Linux</a> <a href="../html/tools.html">🧰 Boite à outils</a> <a href="../html/reconditionnement.html">♻️ Reconditionnement</a> <a href="../html/collectivites.html">🏛️ Collectivités</a> <a href="../html/pourquoi.html">❓ Pourquoi</a> <a href="QCM.php">📝 QCM</a></p>
         </nav>
     </div>
+        <script src="../js/switch-theme.js"></script>
+    </body>

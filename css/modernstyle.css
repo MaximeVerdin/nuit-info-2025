@@ -30,7 +30,7 @@ body {
   min-height: 100vh;
 }
 
-/* Header moderne */
+/* Improved header layout with better logo positioning and spacing */
 header {
   background: linear-gradient(
     135deg,
@@ -40,38 +40,63 @@ header {
   );
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-strong);
-  padding: 3rem 2rem;
-  text-align: center;
+  padding: 2rem 2rem;
   box-shadow: 0 20px 50px rgba(0, 102, 255, 0.1), 0 0 100px rgba(215, 0, 255, 0.05);
   position: relative;
 }
 
 header h1 {
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue),
-    var(--primary-purple),
-    var(--accent-magenta),
-    var(--warm-orange),
-    var(--highlight-yellow)
-  );
+  display: flex;
+  flex-direction: column; /* empile logo et titre verticalement */
+  align-items: center;    /* centre horizontalement */
+  justify-content: center;
+  gap: 1rem;              /* espace entre logo et titre */
+  margin: 0 0 1rem 0;
+}
+
+header h1 a {
+  display: flex;
+  align-items: center;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+header h1 a:hover {
+  transform: scale(1.05);
+}
+
+/* Improved logo styling with proper sizing */
+header img {
+  max-width: 120px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 102, 255, 0.15));
+  transition: filter 0.3s ease;
+}
+
+header img:hover {
+  filter: drop-shadow(0 15px 40px rgba(217, 70, 239, 0.2));
+}
+
+header h1 span {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--accent-magenta));
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  margin: 0;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 header h2 {
   color: var(--text-secondary);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 300;
-  margin-top: 1rem;
+  margin: 0;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 @keyframes gradientShift {
@@ -86,9 +111,10 @@ header h2 {
   }
 }
 
-/* Navigation moderne */
+/* Improved navigation styling and mobile menu positioning */
 .nav-wrap {
   position: relative;
+  z-index: 100;
 }
 
 .nav-toggle-label {
@@ -102,6 +128,7 @@ header h2 {
   cursor: pointer;
   border: none;
   font-size: 1rem;
+  display: none;
 }
 
 .nav-toggle-label:hover {
@@ -115,17 +142,15 @@ header h2 {
 }
 
 .navbar {
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(45, 27, 61, 0.9) 100%);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-top: 1rem;
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.1);
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(45, 27, 61, 0.95) 100%);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border-strong);
+  padding: 1rem 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 102, 255, 0.08);
 }
 
 .navbar p {
@@ -155,13 +180,37 @@ header h2 {
   box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
 }
 
+/* Mobile menu positioning and styling improvements */
 @media (max-width: 768px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  header h1 span {
+    font-size: 1.3rem;
+  }
+
+  header img {
+    max-width: 100px;
+  }
+
+  header h2 {
+    font-size: 0.95rem;
+  }
+
   .nav-toggle-label {
     display: block;
     position: fixed;
     top: 1rem;
     right: 1rem;
     z-index: 1001;
+    padding: 10px 14px;
+    font-size: 0.9rem;
   }
 
   .navbar {
@@ -171,24 +220,27 @@ header h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    padding-top: 5rem;
     overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    z-index: 1000;
     border-radius: 0;
   }
 
   .nav-toggle:checked ~ .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    display: block;
+    padding-top: 100px;
   }
 
   .navbar p {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .navbar a {
     width: 100%;
     text-align: center;
+    padding: 1rem 1.5rem;
   }
 }
 
@@ -197,11 +249,11 @@ main {
   max-width: 1100px;
   margin: 3rem auto;
   padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(45, 27, 61, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.6) 0%, rgba(45, 27, 61, 0.6) 100%);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 20px 60px rgba(0, 102, 255, 0.1), 0 0 100px rgba(215, 0, 255, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 102, 255, 0.08), 0 0 100px rgba(215, 0, 255, 0.03);
 }
 
 main p {
@@ -300,7 +352,6 @@ a {
 
 a:hover {
   color: var(--accent-magenta);
-  text-decoration: underline;
 }
 
 /* Blockquote */
@@ -323,7 +374,6 @@ footer {
   border-top: 1px solid var(--border-strong);
   padding: 2.5rem;
   margin-top: 3rem;
-  border-radius: 16px 16px 0 0;
   color: var(--text-secondary);
   text-align: center;
   box-shadow: 0 -20px 50px rgba(0, 102, 255, 0.08);
@@ -375,14 +425,10 @@ footer a:hover {
   box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
 }
 
-/* Responsive */
+/* Improved responsive design for smaller screens */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  header h2 {
-    font-size: 1.1rem;
+  body {
+    font-size: 15px;
   }
 
   main {
@@ -400,10 +446,32 @@ footer a:hover {
 
   .social-links {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .social-links a {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 span {
+    font-size: 1.1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  main h2 {
+    font-size: 1.4rem;
+  }
+
+  main h3 {
+    font-size: 1.1rem;
+  }
+
+  .navbar a {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
   }
 }

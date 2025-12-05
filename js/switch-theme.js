@@ -1,14 +1,19 @@
 ;(() => {
+
+  const prefix = window.location.pathname.includes("html/") ? "../" : "";
+
   const THEMES = {
     "modern-gradient": {
-      css: "css/modernstyle.css",
+      css: `${prefix}css/modernstyle.css`,
       label: "✨ Moderne",
     },
     retro: {
-      css: "css/gamingcss.css",
+      css: `${prefix}css/gamingcss.css`,
       label: "🎮 Retro",
     },
   }
+
+
 
   const STORAGE_KEY = "nird-theme"
 
