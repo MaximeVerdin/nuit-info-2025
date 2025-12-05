@@ -14,7 +14,7 @@
 
     <script>
     document.getElementById("bike").addEventListener("click", function() {
-    this.src = "../IMG/rockrider_secret.png";
+    this.src = "../IMG/naka.webp";
 });
 </script>
 </body>
