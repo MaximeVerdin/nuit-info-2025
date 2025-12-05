@@ -47,6 +47,7 @@ include 'header.php';
                     </ul>
                 </div>
                 <a href="QCM.php">Refaire le QCM</a>
+                <img id="bike" src="../IMG/rockrider.png" style="max-width: 300px; margin-bottom: 20px;">
             </div>
         <?php else: ?>
             <form method="post" action="QCM.php">
@@ -60,7 +61,6 @@ include 'header.php';
                             </label><br>
                         <?php endforeach; ?>
                     </div>
-                    <img id="bike" src="../IMG/rockrider.png" style="max-width: 300px; margin-bottom: 20px;">
                 <?php endforeach; ?>
                 <button type="submit">Soumettre</button>
             </form>
