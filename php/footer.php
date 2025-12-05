@@ -9,7 +9,7 @@
         </nav>
         Ce site est à l'initiative d'un collectif enseignant réuni sur le <b><a href="https://edurl.fr/tchap-laforgeedu-nird">forum Tchap de la Démarche NIRD</a></b> que nous vous invitons à rejoindre si vous êtes intéressé par la démarche.<br>
         Il est hébergé sur la <a href="https://docs.forge.apps.education.fr/">Forge des communs numériques éducatifs</a>, son squelette est sous licence libre MIT et son contenu sous licence libre Creative Commons BY.
-        <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs" src="../index_files/logo-forge-titre-large.png">
+        <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs" src="../img/logo-forge-titre-large.png">
     </footer>
 
     <script>
