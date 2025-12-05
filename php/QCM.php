@@ -29,8 +29,7 @@ include 'header.php';
 
         <?php if ($result && isset($result['advice'])): ?>
             <div class="result">
-                <h3>Résultats et Conseils</h3>
-                <p>Vous avez répondu à <?php echo $result['answered']; ?> questions sur <?php echo $result['total']; ?>.</p>
+                <h3>Conseils : </h3>
                 <div class="advice">
                     <h4>Conseils personnalisés :</h4>
                     <p><?php echo $result['advice']; ?></p>
