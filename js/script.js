@@ -267,4 +267,6 @@ function restartGame() {
 }
 
 // --- Lancer le jeu ---
-initGame();
+window.addEventListener("DOMContentLoaded", () => {
+  initGame();
+});
