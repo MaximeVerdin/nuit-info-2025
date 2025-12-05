@@ -11,5 +11,11 @@
         Il est hébergé sur la <a href="https://docs.forge.apps.education.fr/">Forge des communs numériques éducatifs</a>, son squelette est sous licence libre MIT et son contenu sous licence libre Creative Commons BY.
         <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs" src="../index_files/logo-forge-titre-large.png">
     </footer>
+
+    <script>
+    document.getElementById("bike").addEventListener("click", function() {
+    this.src = "../IMG/naka.webp";
+});
+</script>
 </body>
 </html>
