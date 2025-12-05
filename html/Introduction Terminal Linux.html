@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR" xml:lang="fr-FR" dir="ltr">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="generator" content="pandoc">
@@ -7,197 +8,67 @@
     <link rel="icon" type="image/x-icon" href="https://nird.forge.apps.education.fr/favicon.ico">
     <title>Introduction au Terminal Linux - La Démarche NIRD</title>
     <style>
-        code{white-space: pre-wrap;}
-        span.smallcaps{font-variant: small-caps;}
-        div.columns{display: flex; gap: min(4vw, 1.5em);}
-        div.column{flex: auto; overflow-x: auto;}
-        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-        ul.task-list[class]{list-style: none;}
-        ul.task-list li input[type="checkbox"] {
-            font-size: inherit;
-            width: 0.8em;
-            margin: 0 0.8em 0.2em -1.6em;
-            vertical-align: middle;
-        }
-        
-        /* Styles pour le terminal */
-        .terminal-container {
-            background: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            font-family: 'Courier New', monospace;
-        }
-        
-        .terminal-header {
-            background: #2d2d2d;
-            padding: 10px;
-            border-radius: 4px 4px 0 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .terminal-dot.red { background: #ff5f56; }
-        .terminal-dot.yellow { background: #ffbd2e; }
-        .terminal-dot.green { background: #27c93f; }
-        
-        .terminal-body {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 15px;
-            border-radius: 0 0 4px 4px;
-            min-height: 300px;
-            max-height: 500px;
-            overflow-y: auto;
-        }
-        
-        .terminal-line {
-            margin: 5px 0;
-            line-height: 1.6;
-        }
-        
-        .terminal-prompt {
-            color: #4ec9b0;
-        }
-        
-        .terminal-input {
-            background: transparent;
-            border: none;
-            color: #d4d4d4;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            width: calc(100% - 150px);
-            outline: none;
-        }
-        
-        .terminal-output {
-            color: #d4d4d4;
-            white-space: pre-wrap;
-        }
-        
-        .terminal-error {
-            color: #f48771;
-        }
-        
-        .terminal-success {
-            color: #4ec9b0;
-        }
-        
-        .command-examples {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        
-        .command-examples h3 {
-            margin-top: 0;
-        }
-        
-        .command-item {
-            margin: 10px 0;
-            padding: 10px;
-            background: white;
-            border-left: 4px solid #4ec9b0;
-            border-radius: 4px;
-        }
-        
-        .command-item code {
-            background: #1e1e1e;
-            color: #4ec9b0;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        
-        .help-section {
-            background: #e8f4f8;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        
-        .help-section h3 {
-            color: #2c5f7d;
-            margin-top: 0;
-        }
-        
-        .tip-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-        
-        .tip-box strong {
-            color: #856404;
-        }
-        
-        .reset-button {
-            background: #4ec9b0;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        
-        .reset-button:hover {
-            background: #3ba895;
-        }
+
     </style>
-    <link rel="stylesheet" href="../index_files/style.css">
-    <link rel="stylesheet" href="../index_files/slides-theme.min.css">
-    <script src="../index_files/weenote-reloaded.min.js.télécharger"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
     <header>
         <h1>
             <a href="https://nird.forge.apps.education.fr/">
-                <img src="../index_files/logo+text206px.png" alt="Logo NIRD">
+                <img src="../IMG/logo+text206px.png" alt="Logo NIRD">
             </a>
             <span>La démarche NIRD</span>
         </h1>
         <h2>Introduction au Terminal Linux</h2>
     </header>
-    
+
     <div class="nav-wrap">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label" aria-label="Ouvrir le menu" aria-controls="site-nav" aria-expanded="false">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Ouvrir le menu" aria-controls="site-nav"
+            aria-expanded="false">
             <img src="../index_files/navbarico.svg" style="width:30px !important; height:30px !important;">
         </label>
         <nav class="navbar nav-menu loaded" id="site-nav">
-            <p><a href="https://nird.forge.apps.education.fr/index.html">🐝 Accueil</a> <a href="https://nird.forge.apps.education.fr/demarche/">🚸 Démarche</a> <a href="https://nird.forge.apps.education.fr/pilotes/">🏫 Pilotes</a> <a href="https://nird.forge.apps.education.fr/linux/">🐧 Linux</a> <a href="https://nird.forge.apps.education.fr/tools/">🧰 Boite à outils</a> <a href="https://nird.forge.apps.education.fr/reconditionnement/">♻️ Reconditionnement</a> <a href="https://nird.forge.apps.education.fr/collectivites/">🏛️ Collectivités</a> <a href="https://nird.forge.apps.education.fr/pourquoi/">❓ Pourquoi</a> <a href="QCM.html">📝 QCM</a> <a href="Introduction Terminal Linux.html">💻 Terminal</a></p>
+            <p>
+                <a href="../index.html">🐝 Accueil</a>
+                <a href="demarche.html">🚸 Démarche</a>
+                <a href="pilotes.html">🏫 Pilotes</a>
+                <a href="linux.html">🐧 Linux</a>
+                <a href="tools.html">🧰 Boite à outils</a>
+                <a href="reconditionnement.html">♻️ Reconditionnement</a>
+                <a href="collectivites.html">🏛️ Collectivités</a>
+                <a href="pourquoi.html">❓ Pourquoi</a>
+                <a href="QCM.html">📝 QCM</a>
+                <a href="Introduction Terminal Linux.html">💻 Terminal</a>
+            </p>
         </nav>
     </div>
 
     <main>
         <div class="help-section">
             <h3>🎯 Pourquoi apprendre le terminal ?</h3>
-            <p>Le terminal Linux peut sembler intimidant au premier abord, mais c'est en réalité un outil puissant et simple à utiliser. Cette page vous permet de <strong>découvrir le terminal en toute sécurité</strong> - vous pouvez expérimenter sans risque, car tout se passe dans votre navigateur !</p>
-            <p><strong>Pas de panique :</strong> vous ne pouvez rien casser ici. C'est un simulateur qui vous permet d'apprendre à votre rythme.</p>
+            <p>Le terminal Linux peut sembler intimidant au premier abord, mais c'est en réalité un outil puissant et
+                simple à utiliser. Cette page vous permet de <strong>découvrir le terminal en toute sécurité</strong> -
+                vous pouvez expérimenter sans risque, car tout se passe dans votre navigateur !</p>
+            <p><strong>Pas de panique :</strong> vous ne pouvez rien casser ici. C'est un simulateur qui vous permet
+                d'apprendre à votre rythme.</p>
         </div>
 
         <h2>📚 Les bases du terminal</h2>
-        <p>Le terminal (aussi appelé ligne de commande ou shell) est un moyen de communiquer avec votre ordinateur en tapant des instructions textuelles. C'est comme avoir une conversation directe avec votre système !</p>
+        <p>Le terminal (aussi appelé ligne de commande ou shell) est un moyen de communiquer avec votre ordinateur en
+            tapant des instructions textuelles. C'est comme avoir une conversation directe avec votre système !</p>
 
         <div class="tip-box">
-            <strong>💡 Astuce :</strong> Dans le terminal, vous tapez des <strong>commandes</strong> suivies de la touche <strong>Entrée</strong> pour les exécuter. C'est aussi simple que ça !
+            <strong>💡 Astuce :</strong> Dans le terminal, vous tapez des <strong>commandes</strong> suivies de la
+            touche <strong>Entrée</strong> pour les exécuter. C'est aussi simple que ça !
         </div>
 
         <h2>🖥️ Simulateur de terminal</h2>
-        <p>Essayez les commandes ci-dessous dans le simulateur. Tapez une commande et appuyez sur <strong>Entrée</strong> pour voir le résultat.</p>
+        <p>Essayez les commandes ci-dessous dans le simulateur. Tapez une commande et appuyez sur
+            <strong>Entrée</strong> pour voir le résultat.
+        </p>
 
         <div class="terminal-container">
             <div class="terminal-header">
@@ -208,63 +79,72 @@
             </div>
             <div class="terminal-body" id="terminalBody">
                 <div class="terminal-line">
-                    <span class="terminal-prompt">utilisateur@linux:~$</span> Bienvenue dans le simulateur de terminal Linux !
+                    <span class="terminal-prompt">utilisateur@linux:~$</span> Bienvenue dans le simulateur de terminal
+                    Linux !
                 </div>
                 <div class="terminal-line">
-                    <span class="terminal-prompt">utilisateur@linux:~$</span> Tapez <code>help</code> pour voir les commandes disponibles.
+                    <span class="terminal-prompt">utilisateur@linux:~$</span> Tapez <code>help</code> pour voir les
+                    commandes disponibles.
                 </div>
                 <div class="terminal-line">
-                    <span class="terminal-prompt">utilisateur@linux:~$</span> 
-                    <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="Tapez une commande ici...">
+                    <span class="terminal-prompt">utilisateur@linux:~$</span>
+                    <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false"
+                        placeholder="Tapez une commande ici...">
                 </div>
             </div>
         </div>
-        
+
         <button class="reset-button" onclick="resetTerminal()">🔄 Réinitialiser le terminal</button>
 
         <h2>📖 Commandes essentielles à connaître</h2>
         <div class="command-examples">
             <h3>Navigation et exploration</h3>
-            
+
             <div class="command-item">
                 <strong><code>pwd</code></strong> - Affiche le répertoire actuel (Print Working Directory)
-                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Savoir où vous vous trouvez dans l'arborescence des dossiers.</p>
+                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Savoir où vous vous trouvez dans l'arborescence
+                    des dossiers.</p>
             </div>
-            
+
             <div class="command-item">
                 <strong><code>ls</code></strong> - Liste les fichiers et dossiers (List)
-                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Voir ce qui se trouve dans le répertoire actuel.</p>
+                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Voir ce qui se trouve dans le répertoire
+                    actuel.</p>
             </div>
-            
+
             <div class="command-item">
                 <strong><code>cd</code> nom_dossier</strong> - Change de répertoire (Change Directory)
-                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Naviguer dans les dossiers. Utilisez <code>cd ..</code> pour remonter d'un niveau.</p>
+                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Naviguer dans les dossiers. Utilisez
+                    <code>cd ..</code> pour remonter d'un niveau.
+                </p>
             </div>
-            
+
             <div class="command-item">
                 <strong><code>cat</code> nom_fichier</strong> - Affiche le contenu d'un fichier
                 <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Lire le contenu d'un fichier texte.</p>
             </div>
-            
+
             <div class="command-item">
                 <strong><code>mkdir</code> nom_dossier</strong> - Crée un nouveau dossier (Make Directory)
                 <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Créer un nouveau répertoire.</p>
             </div>
-            
+
             <div class="command-item">
                 <strong><code>touch</code> nom_fichier</strong> - Crée un nouveau fichier vide
                 <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Créer un fichier vide.</p>
             </div>
-            
+
             <div class="command-item">
                 <strong><code>help</code></strong> - Affiche l'aide dans ce simulateur
-                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Voir toutes les commandes disponibles dans ce simulateur.</p>
+                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">Voir toutes les commandes disponibles dans ce
+                    simulateur.</p>
             </div>
         </div>
 
         <div class="help-section">
             <h3>🔍 Comprendre le prompt</h3>
-            <p>Le <strong>prompt</strong> est cette ligne qui commence par <code>utilisateur@linux:~$</code>. Il vous indique :</p>
+            <p>Le <strong>prompt</strong> est cette ligne qui commence par <code>utilisateur@linux:~$</code>. Il vous
+                indique :</p>
             <ul>
                 <li><strong>utilisateur</strong> : votre nom d'utilisateur</li>
                 <li><strong>linux</strong> : le nom de votre ordinateur</li>
@@ -275,19 +155,25 @@
 
         <div class="tip-box">
             <strong>🎓 Apprentissage progressif</strong><br>
-            Ne vous précipitez pas ! Prenez le temps d'essayer chaque commande une par une. 
-            Le terminal Linux est un outil qui se maîtrise avec la pratique. 
-            Commencez par les commandes simples comme <code>pwd</code> et <code>ls</code>, 
+            Ne vous précipitez pas ! Prenez le temps d'essayer chaque commande une par une.
+            Le terminal Linux est un outil qui se maîtrise avec la pratique.
+            Commencez par les commandes simples comme <code>pwd</code> et <code>ls</code>,
             puis explorez progressivement les autres.
         </div>
 
         <h2>💬 Rassurez-vous !</h2>
-        <p>Beaucoup de personnes appréhendent le terminal, mais c'est souvent parce qu'elles ne l'ont jamais essayé. Voici quelques raisons de vous rassurer :</p>
+        <p>Beaucoup de personnes appréhendent le terminal, mais c'est souvent parce qu'elles ne l'ont jamais essayé.
+            Voici quelques raisons de vous rassurer :</p>
         <ul>
-            <li>✅ <strong>Le terminal est logique</strong> : les commandes ont souvent des noms intuitifs (ls = list, cd = change directory)</li>
-            <li>✅ <strong>Vous pouvez toujours obtenir de l'aide</strong> : tapez <code>help</code> ou <code>man nom_commande</code> dans un vrai terminal</li>
-            <li>✅ <strong>Les erreurs ne sont pas graves</strong> : le terminal vous dira simplement que quelque chose n'a pas fonctionné</li>
-            <li>✅ <strong>C'est plus rapide que l'interface graphique</strong> : une fois que vous connaissez les commandes, vous pouvez faire beaucoup de choses très rapidement</li>
+            <li>✅ <strong>Le terminal est logique</strong> : les commandes ont souvent des noms intuitifs (ls = list, cd
+                = change directory)</li>
+            <li>✅ <strong>Vous pouvez toujours obtenir de l'aide</strong> : tapez <code>help</code> ou
+                <code>man nom_commande</code> dans un vrai terminal
+            </li>
+            <li>✅ <strong>Les erreurs ne sont pas graves</strong> : le terminal vous dira simplement que quelque chose
+                n'a pas fonctionné</li>
+            <li>✅ <strong>C'est plus rapide que l'interface graphique</strong> : une fois que vous connaissez les
+                commandes, vous pouvez faire beaucoup de choses très rapidement</li>
             <li>✅ <strong>Vous n'êtes pas seul</strong> : toute la communauté Linux est là pour vous aider</li>
         </ul>
 
@@ -300,7 +186,8 @@
                 <li>Explorer d'autres commandes comme <code>grep</code>, <code>find</code>, <code>chmod</code></li>
                 <li>Découvrir les scripts shell pour automatiser des tâches</li>
             </ol>
-            <p><strong>N'oubliez pas :</strong> chaque expert a commencé par être débutant. Prenez votre temps et amusez-vous ! 🎉</p>
+            <p><strong>N'oubliez pas :</strong> chaque expert a commencé par être débutant. Prenez votre temps et
+                amusez-vous ! 🎉</p>
         </div>
     </main>
 
@@ -313,11 +200,17 @@
                 <li><a class="tux" href="https://nird.forge.apps.education.fr/linux">Distributions</a></li>
             </ul>
         </nav>
-        Ce site est à l'initiative d'un collectif enseignant réuni sur le <b><a href="https://edurl.fr/tchap-laforgeedu-nird">forum Tchap de la Démarche NIRD</a></b> que nous vous invitons à rejoindre si vous êtes intéressé par la démarche.<br>
-        Il est hébergé sur la <a href="https://docs.forge.apps.education.fr/">Forge des communs numériques éducatifs</a>, son squelette est sous licence libre MIT et son contenu sous licence libre Creative Commons BY.
-        <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs" src="../index_files/logo-forge-titre-large.png">
+        Ce site est à l'initiative d'un collectif enseignant réuni sur le <b><a
+                href="https://edurl.fr/tchap-laforgeedu-nird">forum Tchap de la Démarche NIRD</a></b> que nous vous
+        invitons à rejoindre si vous êtes intéressé par la démarche.<br>
+        Il est hébergé sur la <a href="https://docs.forge.apps.education.fr/">Forge des communs numériques
+            éducatifs</a>, son squelette est sous licence libre MIT et son contenu sous licence libre Creative Commons
+        BY.
+        <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs"
+            src="../IMG/logo-forge-titre-large.png">
     </footer>
 
     <script src="../js/terminal.js"></script>
 </body>
+
 </html>
