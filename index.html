@@ -11,43 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
-    <style>
-        /* Default styles provided by pandoc */
-        code {
-            white-space: pre-wrap;
-        }
 
-        span.smallcaps {
-            font-variant: small-caps;
-        }
-
-        div.columns {
-            display: flex;
-            gap: min(4vw, 1.5em);
-        }
-
-        div.column {
-            flex: auto;
-            overflow-x: auto;
-        }
-
-        div.hanging-indent {
-            margin-left: 1.5em;
-            text-indent: -1.5em;
-        }
-
-        ul.task-list[class] {
-            list-style: none;
-        }
-
-        ul.task-list li input[type="checkbox"] {
-            font-size: inherit;
-            width: 0.8em;
-            margin: 0 0.8em 0.2em -1.6em;
-            vertical-align: middle;
-        }
-    </style>
-    <script src="js/switch-theme.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+    <script src="./js/switch-theme.js"></script>
 </head>
 
 <body>
@@ -77,7 +44,7 @@
                 <a href="html/reconditionnement.html">♻️ Reconditionnement</a>
                 <a href="html/collectivites.html">🏛️ Collectivités</a>
                 <a href="html/pourquoi.html">❓ Pourquoi</a>
-                <a href="html/QCM.html">📝 QCM</a>
+                <a href="php/QCM.php">📝 QCM</a>
                 <a href="html/Introduction Terminal Linux.html">💻 Terminal</a>
             </p>
         </nav>
@@ -165,12 +132,39 @@
         </ul>
 
         <figure>
-            <img src="IMG/livraison_primtux_classe.jpg"
-                alt="Distribution de 14 PC PrimTux, reconditionnés par les élèves du club informatique du lycée Carnot, à l'école primaire de Fouquières-lès-Béthune.">
-            <figcaption aria-hidden="true">Distribution de 14 PC PrimTux, reconditionnés par les élèves du club
-                informatique du lycée Carnot, à l'école primaire de Fouquières-lès-Béthune.</figcaption>
+            <<<<<<< HEAD <img src="IMG/livraison_primtux_classe.jpg"=======<img src="img/livraison_primtux_classe.jpg">
+                >>>>>> a51dbce06b966be3ca8f6709984e05c96e82329a
+                alt="Distribution de 14 PC PrimTux, reconditionnés par les élèves du club informatique du lycée Carnot,
+                à l'école primaire de Fouquières-lès-Béthune.">
+                <figcaption aria-hidden="true">Distribution de 14 PC PrimTux, reconditionnés par les élèves du club
+                    informatique du lycée Carnot, à l'école primaire de Fouquières-lès-Béthune.</figcaption>
         </figure>
     </main>
+
+    <!-- SIMULATEUR NIRD -->
+    <section id="simu-nird">
+        <h2>🏫<span class="rainbow-text1"> Simulateur NIRD : Fais ton choix </span>!</h2>
+        <div id="choices"></div>
+
+        <h3>💸<span class="rainbow-text2"> Budget</span></h3>
+        <div class="gauge">
+            <div id="budgetFill" class="fill"></div>
+        </div>
+
+        <h3> 🌿<span class="rainbow-text1"> Écologie</span></h3>
+        <div class="gauge">
+            <div id="ecoFill" class="fill"></div>
+        </div>
+
+        <h3>🧠 <span class="rainbow-text2"> Autonomie</span></h3>
+        <div class="gauge">
+            <div id="autoFill" class="fill"></div>
+        </div>
+
+        <div id="message"></div>
+        <div id="badge"></div>
+        <button id="restartBtn" onclick="restartGame()">🔄 Recommencer le jeu</button>
+    </section>
 
     <footer>
         <nav>
@@ -188,11 +182,15 @@
             Il est hébergé sur la <a href="https://docs.forge.apps.education.fr/">Forge des communs numériques
                 éducatifs</a>, son squelette est sous licence libre MIT et son contenu sous licence libre Creative
             Commons BY.</p>
-
-        <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs"
+        <<<<<<< HEAD <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs"
             src="./img/logo-forge-titre-large.png">
     </footer>
+    =======
+    >>>>>>> a51dbce06b966be3ca8f6709984e05c96e82329a
 
+    <img class="forge_footer" alt="Logo de la Forge des communs numériques éducatifs"
+        src="./img/logo-forge-titre-large.png">
+    </footer>
 </body>
 
 </html>
