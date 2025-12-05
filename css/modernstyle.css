@@ -22,10 +22,16 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--bg-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-dark) 0%,
+    var(--bg-darker) 50%,
+    var(--bg-light) 100%
+  );
   color: var(--text-primary);
   min-height: 100vh;
 }
@@ -41,16 +47,17 @@ header {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-strong);
   padding: 2rem 2rem;
-  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.1), 0 0 100px rgba(215, 0, 255, 0.05);
+  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.1),
+    0 0 100px rgba(215, 0, 255, 0.05);
   position: relative;
 }
 
 header h1 {
   display: flex;
   flex-direction: column; /* empile logo et titre verticalement */
-  align-items: center;    /* centre horizontalement */
+  align-items: center; /* centre horizontalement */
   justify-content: center;
-  gap: 1rem;              /* espace entre logo et titre */
+  gap: 1rem; /* espace entre logo et titre */
   margin: 0 0 1rem 0;
 }
 
@@ -78,7 +85,12 @@ header img:hover {
 }
 
 header h1 span {
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--accent-magenta));
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--primary-purple),
+    var(--accent-magenta)
+  );
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
   -webkit-background-clip: text;
@@ -118,7 +130,11 @@ header h2 {
 }
 
 .nav-toggle-label {
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--primary-purple)
+  );
   color: white;
   padding: 12px 16px;
   border-radius: 12px;
@@ -142,7 +158,11 @@ header h2 {
 }
 
 .navbar {
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(45, 27, 61, 0.95) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.95) 0%,
+    rgba(45, 27, 61, 0.95) 100%
+  );
   backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--border-strong);
   padding: 1rem 2rem;
@@ -167,14 +187,22 @@ header h2 {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(124, 58, 237, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.1),
+    rgba(124, 58, 237, 0.1)
+  );
   border: 1px solid rgba(124, 58, 237, 0.3);
   font-weight: 500;
   font-size: 0.95rem;
 }
 
 .navbar a:hover {
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.3), rgba(217, 70, 239, 0.3));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.3),
+    rgba(217, 70, 239, 0.3)
+  );
   border: 1px solid rgba(217, 70, 239, 0.6);
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
@@ -249,11 +277,16 @@ main {
   max-width: 1100px;
   margin: 3rem auto;
   padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.6) 0%, rgba(45, 27, 61, 0.6) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.6) 0%,
+    rgba(45, 27, 61, 0.6) 100%
+  );
   backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 20px 60px rgba(0, 102, 255, 0.08), 0 0 100px rgba(215, 0, 255, 0.03);
+  box-shadow: 0 20px 60px rgba(0, 102, 255, 0.08),
+    0 0 100px rgba(215, 0, 255, 0.03);
 }
 
 main p {
@@ -270,7 +303,11 @@ main strong {
 }
 
 main h2 {
-  background: linear-gradient(135deg, var(--primary-blue), var(--accent-magenta));
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--accent-magenta)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -361,7 +398,11 @@ blockquote {
   margin: 2rem 0;
   font-style: italic;
   color: var(--text-secondary);
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(124, 58, 237, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.1),
+    rgba(124, 58, 237, 0.1)
+  );
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 102, 255, 0.08);
@@ -369,7 +410,11 @@ blockquote {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.05) 0%,
+    rgba(124, 58, 237, 0.05) 100%
+  );
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--border-strong);
   padding: 2.5rem;
@@ -410,7 +455,11 @@ footer a:hover {
 .social-links a {
   padding: 0.8rem 1.8rem;
   border-radius: 50px;
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(124, 58, 237, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.2),
+    rgba(124, 58, 237, 0.2)
+  );
   border: 1px solid rgba(217, 70, 239, 0.4);
   display: inline-block;
   transition: all 0.3s ease;
@@ -419,7 +468,11 @@ footer a:hover {
 }
 
 .social-links a:hover {
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.4), rgba(217, 70, 239, 0.4));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 255, 0.4),
+    rgba(217, 70, 239, 0.4)
+  );
   border: 1px solid rgba(217, 70, 239, 0.8);
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
