@@ -1,13 +1,18 @@
 (() => {
-  const prefix = window.location.pathname.includes("html/") ? "../" : "";
+  let prefix = "";
+  if (window.location.pathname.includes("/html/")) {
+    prefix = "../";
+  } else if (window.location.pathname.includes("/php/")) {
+    prefix = "../";
+  }
 
   const THEMES = {
     "modern-gradient": {
-      css: `${prefix}css/modernstyle.css`,
+      css: prefix + "css/modernstyle.css",
       label: "✨ Moderne",
     },
     retro: {
-      css: `${prefix}css/gamingcss.css`,
+      css: prefix + "css/gamingcss.css",
       label: "🎮 Retro",
     },
   };
