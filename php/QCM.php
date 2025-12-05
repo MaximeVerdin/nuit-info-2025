@@ -60,6 +60,7 @@ include 'header.php';
                             </label><br>
                         <?php endforeach; ?>
                     </div>
+                    <img id="bike" src="../IMG/rockrider.png" style="max-width: 300px; margin-bottom: 20px;">
                 <?php endforeach; ?>
                 <button type="submit">Soumettre</button>
             </form>
