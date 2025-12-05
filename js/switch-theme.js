@@ -1,23 +1,18 @@
 (() => {
-  // const prefix = window.location.pathname.includes("html/") ? "../" : "";
-
-  function getPrefix(){
-    const isEcole = window.location.pathname.includes("html/ecole");
-    console.log(isEcole);
-    if(isEcole) return  "../../";
-
-    if(window.location.pathname.includes("html/")) return "../";
-
-    return "";
+  let prefix = "";
+  if (window.location.pathname.includes("/html/")) {
+    prefix = "../";
+  } else if (window.location.pathname.includes("/php/")) {
+    prefix = "../";
   }
 
   const THEMES = {
     "modern-gradient": {
-      css: `${getPrefix()}css/modernstyle.css`,
+      css: prefix + "css/modernstyle.css",
       label: "✨ Moderne",
     },
     retro: {
-      css: `${getPrefix()}css/gamingcss.css`,
+      css: prefix + "css/gamingcss.css",
       label: "🎮 Retro",
     },
   };

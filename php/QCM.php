@@ -16,7 +16,7 @@ include 'header.php';
             <h3>Identification requise</h3>
             <p>Avant de commencer le QCM, veuillez vous connecter ou vous inscrire.</p>
             <p style="color: red; font-size: 0.9em; font-weight: bold;">Disclaimer : Ce QCM est à des fins éducatives uniquement. Les données collectées (nom et mot de passe) sont stockées à des fins de démonstration et ne sont pas destinées à un usage réel. Veuillez ne pas utiliser d'informations personnelles réelles. Utilisez des identifiants fictifs pour protéger votre vie privée. Les organisateurs et toutes autres personnes ne sont pas responsables des données fournit, car il a bien été stipulé d'utiliser de faux identifiants à des fins éducatives.</p>
-            <form method="post" action="QCM.php">
+            <form method="post" action="../php/QCM.php">
                 <label>Nom: <input type="text" name="nom" required></label><br>
                 <label>Mot de passe: <input type="password" name="password" required></label><br>
                 <button type="submit" name="login">Se connecter</button>
@@ -47,9 +47,10 @@ include 'header.php';
                     </ul>
                 </div>
                 <a href="QCM.php">Refaire le QCM</a>
+                <img id="bike" src="../img/rockrider.png" style="max-width: 300px; margin-bottom: 20px;">
             </div>
         <?php else: ?>
-            <form method="post" action="QCM.php">
+            <form method="post" action="../php/QCM.php">
                 <?php foreach ($questions as $question): ?>
                     <div class="question">
                         <h4><?php echo $question['rowid'] . '. ' . $question['question']; ?></h4>
@@ -60,7 +61,6 @@ include 'header.php';
                             </label><br>
                         <?php endforeach; ?>
                     </div>
-                    <img id="bike" src="../IMG/rockrider.png" style="max-width: 300px; margin-bottom: 20px;">
                 <?php endforeach; ?>
                 <button type="submit">Soumettre</button>
             </form>
