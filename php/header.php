@@ -42,6 +42,6 @@
             <img src="../index_files/navbarico.svg" style="width:30px !important; height:30px !important;">
         </label>
         <nav class="navbar nav-menu loaded" id="site-nav">
-            <p><a href="../index.html">🐝 Accueil</a> <a href="../html/demarche.html">🚸 Démarche</a> <a href="../html/pilotes.html">🏫 Pilotes</a> <a href="../html/linux.html">🐧 Linux</a> <a href="../html/tools.html">🧰 Boite à outils</a> <a href="../html/reconditionnement.html">♻️ Reconditionnement</a> <a href="../html/collectivites.html">🏛️ Collectivités</a> <a href="../html/pourquoi.html">❓ Pourquoi</a> <a href="php/QCM.php">📝 QCM</a></p>
+            <p><a href="../index.html">🐝 Accueil</a> <a href="../html/demarche.html">🚸 Démarche</a> <a href="../html/pilotes.html">🏫 Pilotes</a> <a href="../html/linux.html">🐧 Linux</a> <a href="../html/tools.html">🧰 Boite à outils</a> <a href="../html/reconditionnement.html">♻️ Reconditionnement</a> <a href="../html/collectivites.html">🏛️ Collectivités</a> <a href="../html/pourquoi.html">❓ Pourquoi</a> <a href="QCM.php">📝 QCM</a></p>
         </nav>
     </div>
